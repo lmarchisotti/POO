@@ -9,7 +9,7 @@ public class Janela extends JFrame{
 	
 	private static final long serialVersionUID = 1L;
 	
-	JLabel labelBag = new JLabel("Mochila");
+	JLabel labelMochila = new JLabel("Mochila");
 	JLabel labelSala = new JLabel("Sala");
 	
 	// ==============================================================================
@@ -41,27 +41,27 @@ public class Janela extends JFrame{
 	JLabel labelTroll = new JLabel(imgTroll);
 	
 	ImageIcon imgMachado = new ImageIcon(getClass().getResource("axe.png"));
-	JLabel labelMachadoJogador = new JLabel(imgMachado);
+	JLabel labelMachado = new JLabel(imgMachado);
 	
 	// ==============================================================================
 	// Atributos para construcao da janela da mochila.
-	ImageIcon frame2 = new ImageIcon(getClass().getResource("quadro_jogador.png"));
-	JLabel labelFrame2 = new JLabel(frame2);
+	ImageIcon quadro2 = new ImageIcon(getClass().getResource("quadro_jogador.png"));
+	JLabel labelFrame2 = new JLabel(quadro2);
 	
-	JLabel labelMacFerroJogador = new JLabel(imgMachado);
-	JLabel labelTextoMacFerro = new JLabel("===>  Possui 6.");
+	JLabel labelMachadoJogador = new JLabel(imgMachado);
+	JLabel labelTextoMachado= new JLabel("===>  Possui 0.");
 	
-	JLabel labelPotionJogador = new JLabel(imgPocao);
-	JLabel labelTextoPotion = new JLabel("===>  Possui 5.");
+	JLabel labelPocaoJogador = new JLabel(imgPocao);
+	JLabel labelTextoPotion = new JLabel("===>  Possui 0.");
 	
 	JLabel labelKeyJogador = new JLabel(imgKey);
-	JLabel labelTextoKey = new JLabel("===>  Possui 1.");
+	JLabel labelTextoKey = new JLabel("===>  Possui 0.");
 	
 	JLabel labelGoldJogador = new JLabel(imgGold);
-	JLabel labelTextoGold = new JLabel("===>  Possui 2.");
+	JLabel labelTextoGold = new JLabel("===>  Possui 0.");
 	
 	JLabel labelDiamondJogador = new JLabel(imgDiamond);
-	JLabel labelTextoDiamond = new JLabel("===>  Possui 3.");
+	JLabel labelTextoDiamond = new JLabel("===>  Possui 0.");
 	
 	// ==============================================================================
 	// Metodos para visualizacao dos itens da sala
@@ -86,7 +86,7 @@ public class Janela extends JFrame{
 	}
 	
 	public void setLabelMacFerro(Janela janela, boolean val){
-		janela.labelMachadoJogador.setVisible(val);
+		janela.labelMachado.setVisible(val);
 	}
 	
 	public void setLabelTroll(Janela janela, boolean val){
@@ -112,7 +112,7 @@ public class Janela extends JFrame{
 	// ==============================================================================
 	// Metodos para visualizacao dos itens da mochila
 	public void setLabelPotionJogador(Janela janela, boolean val, int quant){
-		janela.labelPotionJogador.setVisible(val);
+		janela.labelPocaoJogador.setVisible(val);
 		janela.labelTextoPotion.setVisible(val);
 		janela.labelTextoPotion.setText("==> Possui " + quant + ".");
 	}
@@ -123,10 +123,10 @@ public class Janela extends JFrame{
 		janela.labelTextoKey.setText("==> Possui " + quant + ".");
 	}
 		
-	public void setLabelMacFerroJogador(Janela janela, boolean val, int quant){
-		janela.labelMacFerroJogador.setVisible(val);
-		janela.labelTextoMacFerro.setVisible(val);
-		janela.labelTextoMacFerro.setText("==> Possui " + quant + ".");
+	public void setLabelMachadoJogador(Janela janela, boolean val, int quant){
+		janela.labelMachadoJogador.setVisible(val);
+		janela.labelTextoMachado.setVisible(val);
+		janela.labelTextoMachado.setText("==> Possui " + quant + ".");
 	}
 	
 	public void setLabelGoldJogador(Janela janela, boolean val, int quant){
@@ -152,7 +152,7 @@ public class Janela extends JFrame{
 	// ==============================================================================
 	// Construtor da janela base
 	public Janela(){
-		setSize(900, 700);
+		setSize(905, 705);
 		setVisible(true);
 		setTitle("TP2 - POO");
 		setResizable(false);
@@ -161,14 +161,14 @@ public class Janela extends JFrame{
 		setLayout(null);
 		
 		// Titulos
-		add(labelBag);
+		add(labelMochila);
 		add(labelSala);
-		labelBag.setBounds(113, -70, 250, 250);
+		labelMochila.setBounds(113, 0, 250, 250);
 		labelSala.setBounds(585, -70, 250, 250);
 		
 		// Pocao 
 		add(labelPotion);
-		labelPotion.setBounds(830, 83, 70, 70);	
+		labelPotion.setBounds(830, 83, 50, 70);	
 		
 		// Chave 
 		add(labelKey);
@@ -177,13 +177,13 @@ public class Janela extends JFrame{
 		// Ouro
 		add(labelGold);
 		add(contGold);
-		labelGold.setBounds(820, 595, 70, 70);
+		labelGold.setBounds(820, 595, 70, 60);
 		contGold.setBounds(842, 530, 120, 120);
 		
 		// Diamante
 		add(labelDiamond);
 		add(contDiamond);
-		labelDiamond.setBounds(760, 595, 70, 70);
+		labelDiamond.setBounds(760, 595, 70, 60);
 		contDiamond.setBounds(781, 530, 120, 120);
 		
 		// Troll
@@ -191,42 +191,42 @@ public class Janela extends JFrame{
 		labelTroll.setBounds(535, 335, 140, 120);
 				
 		// Machado
-		add(labelMachadoJogador);
-		labelMachadoJogador.setBounds(308, 83, 70, 70);		
+		add(labelMachado);
+		labelMachado.setBounds(308, 83, 70, 70);		
 		
 		// Quadro sala 
 		add(labelFrame1);
 		labelFrame1.setBounds(298, 72, 600, 600);
 		
 		// Machados do jogador
-		add(labelMacFerroJogador);
-		labelMachadoJogador.setBounds(15, 215, 70, 70);
-		add(labelTextoMacFerro);
-		labelMachadoJogador.setBounds(100, 202, 240, 100);
+		add(labelMachadoJogador);
+		labelMachado.setBounds(15, 215, 70, 70);
+		add(labelTextoMachado);
+		labelTextoMachado.setBounds(100, 215, 240, 100);
 		
 		// Pocoes do jogador
-		add(labelPotionJogador);
-		labelPotionJogador.setBounds(10, 405, 70, 70);
+		add(labelPocaoJogador);
+		labelPocaoJogador.setBounds(10, 275, 70, 70);
 		add(labelTextoPotion);
-		labelTextoPotion.setBounds(100, 392, 240, 100);
+		labelTextoPotion.setBounds(100, 275, 240, 100);
 		
 		// Chaves do jogador
 		add(labelKeyJogador);
-		labelKeyJogador.setBounds(15, 472, 70, 70);
+		labelKeyJogador.setBounds(15, 345, 70, 70);
 		add(labelTextoKey);
-		labelTextoKey.setBounds(100, 455, 240, 100);
+		labelTextoKey.setBounds(100, 345, 240, 100);
 		
 		// Ouro do jogador
 		add(labelGoldJogador);
-		labelGoldJogador.setBounds(15, 530, 70, 70);
+		labelGoldJogador.setBounds(15, 415, 70, 70);
 		add(labelTextoGold);
-		labelTextoGold.setBounds(100, 515, 240, 100);
+		labelTextoGold.setBounds(100, 415, 240, 100);
 		
 		// Diamante do jogador
 		add(labelDiamondJogador);
-		labelDiamondJogador.setBounds(15, 592, 70, 70);
+		labelDiamondJogador.setBounds(15, 485, 70, 70);
 		add(labelTextoDiamond);
-		labelTextoDiamond.setBounds(100, 575, 240, 100);
+		labelTextoDiamond.setBounds(100, 485, 240, 100);
 				
 		// Quadro jogador
 		add(labelFrame2);

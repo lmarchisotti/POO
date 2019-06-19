@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -36,7 +37,8 @@ public class Game extends Janela {
 		String[] palavra2 = new String[3];
 		while (true) {
 			x = 0;
-			// Exibe as poções na interface gráfica
+			
+			// Exibe as pocoes na interface grafica
 			if (jogador.getComodoAtual().getIsSala()) {
 				if (((Salas) jogador.getComodoAtual()).getPisos().get(0).getItens().get(0).getPot() > 0) {
 					janela.setLabelPotion(janela, true);
@@ -51,7 +53,8 @@ public class Game extends Janela {
 			} else {
 				janela.setLabelPotionJogador(janela, false, 0);
 			}
-			// Exibe as chaves na interface gráfica
+			
+			// Exibe as chaves na interface grafica
 			if (jogador.getComodoAtual().getIsSala()) {
 				if (((Salas) jogador.getComodoAtual()).getPisos().get(0).getItens().get(0).getChave() > 0) {
 					janela.setLabelKey(janela, true);
@@ -66,6 +69,7 @@ public class Game extends Janela {
 			} else {
 				janela.setLabelKeyJogador(janela, false, 0);
 			}
+			
 			// Exibe o machado na interface grafica
 			if (jogador.getComodoAtual().getIsSala()) {
 				if (((Salas) jogador.getComodoAtual()).getPisos().get(0).getItens().get(0).getMachadoFerro() > 0) {
@@ -77,9 +81,9 @@ public class Game extends Janela {
 				janela.setLabelMacFerro(janela, false);
 			}
 			if (jogador.getBagAxeFerro() > 0) {
-				janela.setLabelMacFerroJogador(janela, true, jogador.getBagAxeFerro());
+				janela.setLabelMachadoJogador(janela, true, jogador.getBagAxeFerro());
 			} else {
-				janela.setLabelMacFerroJogador(janela, false, 0);
+				janela.setLabelMachadoJogador(janela, false, 0);
 			}
 			
 			// Exibe as pecas de ouro na interface grafica
@@ -105,6 +109,7 @@ public class Game extends Janela {
 			} else {
 				janela.setLabelGoldJogador(janela, false, 0);
 			}
+			
 			// Exibe as peças de diamante na interface gráfica
 			if (somaDiamante > 0) {
 				janela.setLabelDiamond(janela, true, somaDiamante);
@@ -116,6 +121,7 @@ public class Game extends Janela {
 			} else {
 				janela.setLabelDiamondJogador(janela, false, 0);
 			}
+			
 			// Exibe o troll da sala
 			janela.setLabelTroll(janela, false);
 			for(int i = 0; i < troll.size(); i++){
@@ -131,7 +137,7 @@ public class Game extends Janela {
 					x = 1;
 				}
 			}
-			//System.out.println(ler.toString());
+			
 			if (palavra[0].equals("view")) {
 
 				comodos.get(0).view(jogador, troll);
@@ -145,12 +151,11 @@ public class Game extends Janela {
 						movimento.moveTo(map, palavra[1], jogador.getComodoAtual(), jogador);
 						movimento.moveTroll(map, troll, jogador);
 					}
-				} else if (palavra[1].equals("Gold") || palavra[1].equals("Diamante") || palavra[1].equals("AxeFerro")
-						|| palavra[1].equals("AxeBronze") || palavra[1].equals("AxeOuro") || palavra[1].equals("Pot")
-						|| palavra[1].equals("Key")) {
+				} else if (palavra[1].equals("gold") || palavra[1].equals("diamond") || palavra[1].equals("axe")
+						|| palavra[1].equals("pot") || palavra[1].equals("key")) {
 					if (palavra2[0].equals("pickUp")) {
 
-						if (palavra2[1].equals("Gold")) {
+						if (palavra2[1].equals("gold")) {
 							if (x != 1) {
 								movimento.pickUpGold(map, jogador);
 							} else {
@@ -158,7 +163,7 @@ public class Game extends Janela {
 							}
 						}
 
-						if (palavra2[1].equals("Diamante")) {
+						if (palavra2[1].equals("diamond")) {
 							if (x != 1) {
 								movimento.pickUpDiamante(map, jogador);
 							} else {
@@ -166,94 +171,50 @@ public class Game extends Janela {
 							}
 						}
 
-						if (palavra2[1].equals("AxeFerro")) {
+						if (palavra2[1].equals("axe")) {
 							if (jogador.getBagAxe() < 4) {
 								movimento.pickUpAxeFerro(map, jogador);
 							} else {
-								System.out.println("Bag de machados cheia");
+								System.out.println("Mochila de machados cheia");
 							}
 						}
 
-						if (palavra2[1].equals("AxeBronze")) {
-							if (jogador.getBagAxe() < 4) {
-								movimento.pickUpAxeBronze(map, jogador);
-							} else {
-								System.out.println("Bag de machados cheia");
-							}
-						}
-
-						if (palavra2[1].equals("AxeOuro")) {
-							if (jogador.getBagAxe() < 4) {
-								movimento.pickUpAxeOuro(map, jogador);
-							} else {
-								System.out.println("Bag de machados cheia");
-							}
-						}
-
-						if (palavra2[1].equals("Key")) {
+						if (palavra2[1].equals("key")) {
 							if (jogador.getBagKey() < 3) {
 								movimento.pickUpKey(map, jogador);
 							} else {
-								System.out.println("Bag de chaves cheia");
+								System.out.println("Mochila de chaves cheia");
 							}
 						}
-						if (palavra2[1].equals("Pot")) {
+						
+						if (palavra2[1].equals("pot")) {
 							if (jogador.getBagPot() < 3) {
 								movimento.pickUpPotion(map, jogador);
 							} else {
-								System.out.println("Bag de poçoes cheia");
+								System.out.println("Mochila de pocoes cheia");
 							}
 						}
+						
 					}
 				}
 			} else if (palavra[0].equals("drop")) {
-				if (palavra[1].equals("Pot")) {
+				if (palavra[1].equals("pot")) {
 					movimento.dropPotion(map, jogador);
-				} else if (palavra[1].equals("Key")) {
+				} else if (palavra[1].equals("key")) {
 					movimento.dropKey(map, jogador);
-				} else if (palavra[1].equals("AxeFerro")) {
+				} else if (palavra[1].equals("axe")) {
 					movimento.dropAxeFerro(map, jogador);
-				} else if (palavra[1].equals("AxeBronze")) {
-					movimento.dropAxeBronze(map, jogador);
-				} else if (palavra[1].equals("AxeOuro")) {
-					movimento.dropAxeOuro(map, jogador);
 				}
 
 			} else if (palavra[0].equals("viewBag")) {
 				movimento.viewBag(jogador);
-			} else if (palavra[0].equals("throwAxeFerro")) {
+			} else if (palavra[0].equals("throwAxe")) {
 				if (palavra[1].equals("TrollGuerreiro") || palavra[1].equals("TrolldaCaverna")) {
 					
 					if (jogador.getBagAxeFerro() == 0) {
-						System.out.println("Não há machados de ferro na bag");
+						System.out.println("Nao ha machados na bag");
 					} else {
 						movimento.throwAxeFerro(map, jogador, palavra[1]);
-						for(int i = 0; i < troll.size(); i++){
-							if (troll.get(i).getComodoAtual() == jogador.getComodoAtual()){
-								troll.get(i).setVivo(false);
-							}
-						}
-					}
-				}
-			} else if (palavra[0].equals("throwAxeBronze")) {
-				if (palavra[1].equals("TrollGuerreiro") || palavra[1].equals("TrolldaCaverna")) {
-					if (jogador.getBagAxeBronze() == 0) {
-						System.out.println("Não há machados de bronze na bag");
-					} else {
-						movimento.throwAxeBronze(map, jogador, palavra[1]);
-						for(int i = 0; i < troll.size(); i++){
-							if (troll.get(i).getComodoAtual() == jogador.getComodoAtual()){
-								troll.get(i).setVivo(false);
-							}
-						}
-					}
-				}
-			} else if (palavra[0].equals("throwAxeOuro")) {
-				if (palavra[1].equals("TrollGuerreiro") || palavra[1].equals("TrolldaCaverna")) {
-					if (jogador.getBagAxeOuro() == 0) {
-						System.out.println("Não há machados de bronze na bag");
-					} else {
-						movimento.throwAxeOuro(map, jogador, palavra[1]);
 						for(int i = 0; i < troll.size(); i++){
 							if (troll.get(i).getComodoAtual() == jogador.getComodoAtual()){
 								troll.get(i).setVivo(false);
@@ -266,7 +227,7 @@ public class Game extends Janela {
 					movimento.unlock(map, jogador, palavra[1]);
 				}
 			} else {
-				System.out.print("\nComando inválido\n");
+				System.out.print("\nComando invalido\n");
 			}
 		}
 	}
