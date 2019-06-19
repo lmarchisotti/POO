@@ -1,0 +1,400 @@
+{
+  "salas": {
+    "1": {
+      "id": "01",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "01"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "04"
+        }
+      }
+    },
+    "2": {
+      "id": "02",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "02"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "01"
+        },
+        "3": {
+          "identificador": "C",
+          "corredor": "05"
+        }
+      }
+    },
+    "3": {
+      "id": "03",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "03"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "02"
+        },
+        "3": {
+          "identificador": "C",
+          "corredor": "00"
+        }
+      }
+    },
+    "4": {
+      "id": "04",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "04"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "08"
+        }
+      }
+    },
+    "5": {
+      "id": "05",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "05"
+        }
+      }
+    },
+    "6": {
+      "id": "06",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "09"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "06"
+        }
+      }
+    },
+    "7": {
+      "id": "07",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "06"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "03"
+        },
+        "3": {
+          "identificador": "C",
+          "corredor": "07"
+        }
+      }
+    },
+    "8": {
+      "id": "08",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "08"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "10"
+        },
+        "3": {
+          "identificador": "C",
+          "corredor": "15"
+        }
+      }
+    },
+    "9": {
+      "id": "09",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "10"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "11"
+        },
+        "3": {
+          "identificador": "C",
+          "corredor": "09"
+        }
+      }
+    },
+    "10": {
+      "id": "10",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "11"
+        }
+      }
+    },
+    "11": {
+      "id": "11",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "07"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "12"
+        }
+      }
+    },
+    "12": {
+      "id": "12",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "15"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "13"
+        }
+      }
+    },
+    "13": {
+      "id": "13",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "13"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "14"
+        }
+      }
+    },
+    "14": {
+      "id": "13",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "14"
+        }
+      }
+    },
+    "15": {
+      "id": "15",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "12"
+        }
+      }
+    }
+  },
+  "corredores": {
+    "1": {
+      "id": "01",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "01"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "02"
+        }
+      }
+    },
+    "2": {
+      "id": "02",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "02"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "03"
+        }
+      }
+    },
+    "3": {
+      "id": "03",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "03"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "07"
+        }
+      }
+    },
+    "4": {
+      "id": "04",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "04"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "01"
+        }
+      }
+    },
+    "5": {
+      "id": "05",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "05"
+        },
+        "2": {
+          "identificador": "C",
+          "sala": "02"
+        }
+      }
+    },
+    "6": {
+      "id": "06",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "07"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "06"
+        }
+      }
+    },
+    "7": {
+      "id": "07",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "11"
+        },
+        "2": {
+          "identificador": "C",
+          "sala": "07"
+        }
+      }
+    },
+    "8": {
+      "id": "08",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "08"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "04"
+        }
+      }
+    },
+    "9": {
+      "id": "09",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "06"
+        },
+        "2": {
+          "identificador": "C",
+          "sala": "09"
+        }
+      }
+    },
+    "10": {
+      "id": "10",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "09"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "08"
+        }
+      }
+    },
+    "11": {
+      "id": "11",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "10"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "09"
+        }
+      }
+    },
+    "12": {
+      "id": "12",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "15"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "11"
+        }
+      }
+    },
+    "13": {
+      "id": "13",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "13"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "12"
+        }
+      }
+    },
+    "14": {
+      "id": "14",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "14"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "13"
+        }
+      }
+    },
+    "15": {
+      "id": "15",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "12"
+        },
+        "2": {
+          "identificador": "C",
+          "sala": "08"
+        }
+      }
+    }
+  }
+}
