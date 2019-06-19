@@ -5,11 +5,11 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "corredor": "01"
+          "corredor": "05"
         },
         "2": {
           "identificador": "B",
-          "corredor": "04"
+          "corredor": "01"
         }
       }
     },
@@ -18,15 +18,11 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "corredor": "02"
+          "corredor": "01"
         },
         "2": {
           "identificador": "B",
-          "corredor": "01"
-        },
-        "3": {
-          "identificador": "C",
-          "corredor": "05"
+          "corredor": "02"
         }
       }
     },
@@ -35,15 +31,11 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "corredor": "03"
+          "corredor": "02"
         },
         "2": {
           "identificador": "B",
-          "corredor": "02"
-        },
-        "3": {
-          "identificador": "C",
-          "corredor": "00"
+          "corredor": "07"
         }
       }
     },
@@ -51,12 +43,8 @@
       "id": "04",
       "portas": {
         "1": {
-          "identificador": "A",
-          "corredor": "04"
-        },
-        "2": {
           "identificador": "B",
-          "corredor": "08"
+          "corredor": "04"
         }
       }
     },
@@ -65,7 +53,11 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "corredor": "05"
+          "corredor": "09"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "04"
         }
       }
     },
@@ -74,11 +66,11 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "corredor": "09"
+          "corredor": "05"
         },
         "2": {
           "identificador": "B",
-          "corredor": "06"
+          "corredor": "10"
         }
       }
     },
@@ -87,15 +79,11 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "corredor": "06"
+          "corredor": "15"
         },
         "2": {
           "identificador": "B",
-          "corredor": "03"
-        },
-        "3": {
-          "identificador": "C",
-          "corredor": "07"
+          "corredor": "10"
         }
       }
     },
@@ -104,15 +92,11 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "corredor": "08"
+          "corredor": "16"
         },
         "2": {
           "identificador": "B",
-          "corredor": "10"
-        },
-        "3": {
-          "identificador": "C",
-          "corredor": "15"
+          "corredor": "07"
         }
       }
     },
@@ -121,15 +105,7 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "corredor": "10"
-        },
-        "2": {
-          "identificador": "B",
-          "corredor": "11"
-        },
-        "3": {
-          "identificador": "C",
-          "corredor": "09"
+          "corredor": "13"
         }
       }
     },
@@ -138,7 +114,15 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "corredor": "11"
+          "corredor": "13"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "18"
+        },
+        "3": {
+          "identificador": "C",
+          "corredor": "09"
         }
       }
     },
@@ -147,11 +131,11 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "corredor": "07"
+          "corredor": "19"
         },
         "2": {
           "identificador": "B",
-          "corredor": "12"
+          "corredor": "23"
         }
       }
     },
@@ -160,11 +144,15 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "corredor": "15"
+          "corredor": "19"
         },
         "2": {
           "identificador": "B",
-          "corredor": "13"
+          "corredor": "15"
+        },
+        "3": {
+          "identificador": "C",
+          "corredor": "20"
         }
       }
     },
@@ -173,20 +161,24 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "corredor": "13"
+          "corredor": "20"
         },
         "2": {
           "identificador": "B",
-          "corredor": "14"
+          "corredor": "16"
         }
       }
     },
     "14": {
-      "id": "13",
+      "id": "14",
       "portas": {
         "1": {
           "identificador": "A",
-          "corredor": "14"
+          "corredor": "22"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "26"
         }
       }
     },
@@ -195,7 +187,76 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "corredor": "12"
+          "corredor": "22"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "18"
+        },
+        "3": {
+          "identificador": "C",
+          "corredor": "27"
+        }
+      }
+    },
+  "16": {
+      "id": "16",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "23"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "28"
+        }
+      }
+    },
+  "17": {
+      "id": "17",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "28"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "29"
+        }
+      }
+    },
+  "18": {
+      "id": "18",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "30"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "29"
+        }
+      }
+    },
+  "19": {
+      "id": "19",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "26"
+        },
+        "2": {
+          "identificador": "B",
+          "corredor": "30"
+        }
+      }
+    },
+  "20": {
+      "id": "20",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "corredor": "27"
         }
       }
     }
@@ -227,19 +288,6 @@
         }
       }
     },
-    "3": {
-      "id": "03",
-      "portas": {
-        "1": {
-          "identificador": "A",
-          "sala": "03"
-        },
-        "2": {
-          "identificador": "B",
-          "sala": "07"
-        }
-      }
-    },
     "4": {
       "id": "04",
       "portas": {
@@ -249,7 +297,7 @@
         },
         "2": {
           "identificador": "B",
-          "sala": "01"
+          "sala": "05"
         }
       }
     },
@@ -258,23 +306,10 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "sala": "05"
+          "sala": "01"
         },
         "2": {
           "identificador": "C",
-          "sala": "02"
-        }
-      }
-    },
-    "6": {
-      "id": "06",
-      "portas": {
-        "1": {
-          "identificador": "A",
-          "sala": "07"
-        },
-        "2": {
-          "identificador": "B",
           "sala": "06"
         }
       }
@@ -284,24 +319,11 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "sala": "11"
+          "sala": "03"
         },
         "2": {
           "identificador": "C",
-          "sala": "07"
-        }
-      }
-    },
-    "8": {
-      "id": "08",
-      "portas": {
-        "1": {
-          "identificador": "A",
           "sala": "08"
-        },
-        "2": {
-          "identificador": "B",
-          "sala": "04"
         }
       }
     },
@@ -310,11 +332,11 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "sala": "06"
+          "sala": "05"
         },
         "2": {
           "identificador": "C",
-          "sala": "09"
+          "sala": "10"
         }
       }
     },
@@ -323,37 +345,11 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "sala": "09"
+          "sala": "06"
         },
         "2": {
           "identificador": "B",
-          "sala": "08"
-        }
-      }
-    },
-    "11": {
-      "id": "11",
-      "portas": {
-        "1": {
-          "identificador": "A",
-          "sala": "10"
-        },
-        "2": {
-          "identificador": "B",
-          "sala": "09"
-        }
-      }
-    },
-    "12": {
-      "id": "12",
-      "portas": {
-        "1": {
-          "identificador": "A",
-          "sala": "15"
-        },
-        "2": {
-          "identificador": "B",
-          "sala": "11"
+          "sala": "07"
         }
       }
     },
@@ -362,24 +358,11 @@
       "portas": {
         "1": {
           "identificador": "A",
-          "sala": "13"
+          "sala": "09"
         },
         "2": {
           "identificador": "B",
-          "sala": "12"
-        }
-      }
-    },
-    "14": {
-      "id": "14",
-      "portas": {
-        "1": {
-          "identificador": "A",
-          "sala": "14"
-        },
-        "2": {
-          "identificador": "B",
-          "sala": "13"
+          "sala": "10"
         }
       }
     },
@@ -388,11 +371,154 @@
       "portas": {
         "1": {
           "identificador": "A",
+          "sala": "07"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "12"
+        }
+      }
+    },
+    "16": {
+      "id": "16",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "08"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "13"
+        }
+      }
+    },
+    "18": {
+      "id": "18",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "10"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "15"
+        }
+      }
+    },
+    "19": {
+      "id": "19",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "11"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "12"
+        }
+      }
+    },
+    "20": {
+      "id": "20",
+      "portas": {
+        "1": {
+          "identificador": "A",
           "sala": "12"
         },
         "2": {
+          "identificador": "B",
+          "sala": "13"
+        }
+      }
+    },
+    "22": {
+      "id": "22",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "14"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "15"
+        }
+      }
+    },
+    "23": {
+      "id": "23",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "11"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "16"
+        }
+      }
+    },
+    "26": {
+      "id": "26",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "14"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "19"
+        }
+      }
+    },
+    "27": {
+      "id": "27",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "15"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "20"
+        }
+      }
+    },
+    "28": {
+      "id": "28",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "16"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "17"
+        }
+      }
+    },
+    "29": {
+      "id": "29",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "17"
+        },
+        "2": {
+          "identificador": "B",
+          "sala": "18"
+        }
+      }
+    },
+    "30": {
+      "id": "30",
+      "portas": {
+        "1": {
+          "identificador": "A",
+          "sala": "18"
+        },
+        "2": {
           "identificador": "C",
-          "sala": "08"
+          "sala": "19"
         }
       }
     }
