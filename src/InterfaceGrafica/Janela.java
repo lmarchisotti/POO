@@ -163,7 +163,7 @@ public class Janela extends JFrame{
 		// Titulos
 		add(labelMochila);
 		add(labelSala);
-		labelMochila.setBounds(113, 0, 250, 250);
+		labelMochila.setBounds(113, -70, 250, 250);
 		labelSala.setBounds(585, -70, 250, 250);
 		
 		// Pocao 
