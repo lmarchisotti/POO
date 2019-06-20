@@ -85,7 +85,7 @@ public class Janela extends JFrame{
 		janela.labelKey.setVisible(val);
 	}
 	
-	public void setLabelMacFerro(Janela janela, boolean val){
+	public void setLabelMac(Janela janela, boolean val){
 		janela.labelMachado.setVisible(val);
 	}
 	

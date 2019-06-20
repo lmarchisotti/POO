@@ -203,7 +203,7 @@ public class Comodo {
 			System.out.println("A quantidade de potions: " + quantPot);
 			System.out.println("A quantidade de chaves: " + quantKey);
 			if(quantAxe> 0){
-				System.out.println("Contem um machado de ferro.");
+				System.out.println("Contem um machado.");
 			}
 		
 			for (int i = 0; i < troll.size(); i++){
