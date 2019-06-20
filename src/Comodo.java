@@ -42,72 +42,71 @@ public class Comodo {
 	
 	public static ArrayList<Comodo> startCenario(String caminhoarquivo){
 
-		int qtdeMaximaMachadoOuro = 1;
-		int qtdeMaximaMachadoBronze = 3;
-		int qtdeGeradaMachadoOuro = 0;
-		int qtdeGeradaMachadoBronze = 0;
+		int qtdeMaximaMachado = 1;
+		int qtdeGeradaMachado = 0;
+		
 		JSONParser parser = new JSONParser();
 		ArrayList<Comodo> comodos = new ArrayList<Comodo>();
-		//Leio json
+		
+		// Leio json
 		Reader in = new InputStreamReader(Game.class.getResourceAsStream(caminhoarquivo));
 		JSONObject json;
+		
 		try {
-			//primeiro passo será gerar as salas
+			// Gera as salas.
 			json = (JSONObject) parser.parse(in);
 			ArrayList<Integer> tamanhosGerados = new ArrayList<Integer>();
 			
 			JSONObject jsonSalas = (JSONObject) json.get("salas");
 			JSONObject jsonCorredores = (JSONObject) json.get("corredores");
 			
-			for(int i=1;i<=jsonSalas.size();i++){
+			for(int i = 1; i <= jsonSalas.size(); i++){
 			
 				JSONObject jsonSala = (JSONObject) jsonSalas.get(String.valueOf(i));
 				Salas sala = new Salas();
-				//pego id da sala
-				Integer idSala = new Integer((String) jsonSala.get("id"));
 				
+				Integer idSala = new Integer((String) jsonSala.get("id"));
 				sala.setSalasId(idSala.intValue());
+				
 				sala.setPortas(new ArrayList<Portas>());
 				JSONObject jsonPortas = (JSONObject) jsonSala.get("portas");
 				
-				//vou sortear o tamanho da sala
+				// Sorteia quantas posicoes tera a sala.
 				sala.setTamanho(0);
-				Integer tamanho = new Integer(random.nextInt(100/2)*2+2);//gerando de 2 a 20
+				Integer tamanho = new Integer(random.nextInt(100/2)*2+2); // Gerando de 2 a 20 posicoes.
 				
 				while(tamanhosGerados.contains(tamanho)){
-					tamanho = new Integer(random.nextInt(100/2)*2+2);//gerando de 2 a 20
+					tamanho = new Integer(random.nextInt(100/2)*2+2); // Gerando de 2 a 20 posicoes.
 				}
 				
 				sala.setTamanho(tamanho);
 				tamanhosGerados.add(tamanho);			
 				sala.setPisos(new ArrayList<Pisos>());
 
-				for(int x=0;x<sala.getTamanho()/2;x++){					
-					for(int y=0;y<sala.getTamanho()/2;y++){
+				for(int x = 0; x < sala.getTamanho() / 2; x++){ // Percorre 10 posicoes relacionadas ao "x".
+					for(int y = 0; y < sala.getTamanho() / 2; y++){ // Percorre 10 posicoes relacionadas ao "y".
 						Pisos p = new Pisos();					
 						p.setX(x);
 						p.setY(y);
 						p.setItens(new ArrayList<Itens>());
 						Itens itens = new Itens();
+						
+						// Sorteia os objetos que nao precisam ser sorteados em todos os quadrados.
 						if(x == 0 && y == 0){
-
-							//faz aqui o sorteio dos objetos que nao precisam estar sendo sorteados em todos os quadrados							
 							itens.setRandomPot(0, 1);
 							
-							itens.setRandomMachadoFerro(0,1);
-							if(qtdeGeradaMachadoBronze < qtdeMaximaMachadoBronze){
-								qtdeGeradaMachadoBronze += itens.setRandomMachadoBronze(0, 1);
-							}
-							if(qtdeGeradaMachadoOuro < qtdeMaximaMachadoOuro){
-								qtdeGeradaMachadoOuro += itens.setRandomMachadoOuro(0, 1);
+							itens.setRandomMachado(0,1);
+							if(qtdeGeradaMachado < qtdeMaximaMachado){
+								qtdeGeradaMachado += itens.setRandomMachado(0, 1);
 							}
 							itens.setRandomChave(0,1);
 						}
-						//aqui sorteia ouro e diamante						
+						
+						// Sorteia ouro e diamante.
 						itens.setRandomOuro(0, 5);
 						itens.setRandomDiamante(0, 5);
 
-						//Adiciono os itens na lista de itens da p
+						// Adiciona os itens na lista de itens "p".
 						p.getItens().add(itens);
 						sala.getPisos().add(p);
 					}
@@ -171,10 +170,10 @@ public class Comodo {
 			}
 		
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			// 
 			e.printStackTrace();
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
+			// 
 			e.printStackTrace();
 		}
 		
@@ -187,9 +186,7 @@ public class Comodo {
 		int somaDiamante = 0;
 		int quantPot = 0;
 		int quantKey = 0;
-		int quantAxeFerro = 0;
-		int quantAxeBronze = 0;
-		int quantAxeOuro = 0;
+		int quantAxe = 0;
 		if(jogador.getComodoAtual().getIsSala()){
 			for (int i = 0; i < ((Salas) jogador.getComodoAtual()).getPisos().size(); i++){
 				for(Itens item:((Salas) jogador.getComodoAtual()).getPisos().get(i).getItens()){
@@ -197,24 +194,16 @@ public class Comodo {
 					somaDiamante += item.getDiamond();
 					quantPot += item.getPot();
 					quantKey += item.getChave();
-					quantAxeFerro += item.getMachadoFerro();
-					quantAxeBronze += item.getMachadoBronze();
-					quantAxeOuro += item.getMachadoOuro();
-				}			
+					quantAxe += item.getMachado();
+				}
 			}
 
 			System.out.println("A quantidade de ouro: " + somaOuro);
 			System.out.println("A quantidade de diamantes: " + somaDiamante);	
 			System.out.println("A quantidade de potions: " + quantPot);
 			System.out.println("A quantidade de chaves: " + quantKey);
-			if(quantAxeFerro> 0){
-				System.out.println("Contém um machado de ferro.");
-			}
-			if(quantAxeBronze > 0){
-				System.out.println("Contém um machado de bronze.");
-			}
-			if(quantAxeOuro > 0){
-				System.out.println("Contém um machado de ouro.");
+			if(quantAxe> 0){
+				System.out.println("Contem um machado de ferro.");
 			}
 		
 			for (int i = 0; i < troll.size(); i++){
