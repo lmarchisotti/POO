@@ -1,59 +1,16 @@
 public class Jogador {
-	private Comodo comodoAtual;
-	private int ouro;
-    private int diamante;
-    private int bagAxe; // bag de todos os machados
-    private int bagAxeFerro; //bag dos machados de ferro
-    private int bagAxeBronze; //bag dos machados de bronze
-    private int bagAxeOuro; //bag dos machados de ouro
-    private int lancaBronze;
-    private int lancaOuro;
+	private Comodo comodoAtual;	// Localizacao atual
+	private int ouro;			// bag de ouro
+    private int diamante;		// bag de diamante
+    private int bagAxe; 		// bag de machados
+        
     
+    // Getters e Setters da localizacao atual, ouro, diamante, chaves, poçoes
     public Comodo getComodoAtual() {
 		return comodoAtual;
 	}
     public void setComodoAtual(Comodo comodoAtual) {
 		this.comodoAtual = comodoAtual;
-	}
-    
-    public int getLancaBronze() {
-		return lancaBronze;
-	}
-
-	public void setLancaBronze(int lancaBronze) {
-		this.lancaBronze = lancaBronze;
-	}
-
-	public int getLancaOuro() {
-		return lancaOuro;
-	}
-
-	public void setLancaOuro(int lancaOuro) {
-		this.lancaOuro = lancaOuro;
-	}
-
-	public int getBagAxeFerro() {
-		return bagAxeFerro;
-	}
-
-	public void setBagAxeFerro(int bagAxeFerro) {
-		this.bagAxeFerro = bagAxeFerro;
-	}
-
-	public int getBagAxeBronze() {
-		return bagAxeBronze;
-	}
-
-	public void setBagAxeBronze(int bagAxeBronze) {
-		this.bagAxeBronze = bagAxeBronze;
-	}
-
-	public int getBagAxeOuro() {
-		return bagAxeOuro;
-	}
-
-	public void setBagAxeOuro(int bagAxeOuro) {
-		this.bagAxeOuro = bagAxeOuro;
 	}
 
 	private int bagKey;

@@ -1,9 +1,11 @@
 public class Trolls {
 	
+	// Nome troll - Comodo atual - booleano se vivo ou morto
 	String nt;
 	private Comodo comodoAtual;
 	private boolean vivo;
 
+	// Para cada troll, o conjunto de inf nome-localizacao-vivo ou nao
 	public Trolls(String nt, Comodo comodoAtual, boolean vivo){
 		this.nt = nt;
 		this.comodoAtual = comodoAtual;

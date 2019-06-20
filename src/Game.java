@@ -72,16 +72,16 @@ public class Game extends Janela {
 			
 			// Exibe o machado na interface grafica
 			if (jogador.getComodoAtual().getIsSala()) {
-				if (((Salas) jogador.getComodoAtual()).getPisos().get(0).getItens().get(0).getMachadoFerro() > 0) {
-					janela.setLabelMacFerro(janela, true);
+				if (((Salas) jogador.getComodoAtual()).getPisos().get(0).getItens().get(0).getMachado() > 0) {
+					janela.setLabelMac(janela, true);
 				} else {
-					janela.setLabelMacFerro(janela, false);
+					janela.setLabelMac(janela, false);
 				}
 			} else {
-				janela.setLabelMacFerro(janela, false);
+				janela.setLabelMac(janela, false);
 			}
-			if (jogador.getBagAxeFerro() > 0) {
-				janela.setLabelMachadoJogador(janela, true, jogador.getBagAxeFerro());
+			if (jogador.getBagAxe() > 0) {
+				janela.setLabelMachadoJogador(janela, true, jogador.getBagAxe());
 			} else {
 				janela.setLabelMachadoJogador(janela, false, 0);
 			}
@@ -173,7 +173,7 @@ public class Game extends Janela {
 
 						if (palavra2[1].equals("axe")) {
 							if (jogador.getBagAxe() < 4) {
-								movimento.pickUpAxeFerro(map, jogador);
+								movimento.pickUpAxe(map, jogador);
 							} else {
 								System.out.println("Mochila de machados cheia");
 							}
@@ -203,7 +203,7 @@ public class Game extends Janela {
 				} else if (palavra[1].equals("key")) {
 					movimento.dropKey(map, jogador);
 				} else if (palavra[1].equals("axe")) {
-					movimento.dropAxeFerro(map, jogador);
+					movimento.dropAxe(map, jogador);
 				}
 
 			} else if (palavra[0].equals("viewBag")) {
@@ -211,10 +211,10 @@ public class Game extends Janela {
 			} else if (palavra[0].equals("throwAxe")) {
 				if (palavra[1].equals("TrollGuerreiro") || palavra[1].equals("TrolldaCaverna")) {
 					
-					if (jogador.getBagAxeFerro() == 0) {
+					if (jogador.getBagAxe() == 0) {
 						System.out.println("Nao ha machados na bag");
 					} else {
-						movimento.throwAxeFerro(map, jogador, palavra[1]);
+						movimento.throwAxe(map, jogador, palavra[1]);
 						for(int i = 0; i < troll.size(); i++){
 							if (troll.get(i).getComodoAtual() == jogador.getComodoAtual()){
 								troll.get(i).setVivo(false);

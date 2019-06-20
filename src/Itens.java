@@ -2,6 +2,7 @@ import java.util.Random;
 
 public class Itens {
 	
+	// 
 	private int ouro = 0;
 	private int diamond = 0;
 	private int pot = 0;
@@ -12,6 +13,7 @@ public class Itens {
 		return machado;
 	}
 	
+	// Geracao aleatoria de machados
 	public int setRandomMachado(int min, int max){
 		Random randx = new Random();
 		int randomMachado = randx.nextInt((max-min)+1) + min;
@@ -19,8 +21,8 @@ public class Itens {
 		return randomMachado;
 	}
 	
-	public void setMachadoFerro(int machadoFerro) {
-		this.machado = machadoFerro;
+	public void setMachado(int machado) {
+		this.machado = machado;
 	}
 	
 	public int getOuro() {
@@ -31,6 +33,7 @@ public class Itens {
 		return chave;
 	}
 	
+	// Geracao aleatoria das chaves
 	public void setRandomChave(int min, int max){
 		Random randx = new Random();
 		int randomChave = randx.nextInt((max-min)+1) + min;
@@ -41,12 +44,14 @@ public class Itens {
 		return diamond;
 	}
 	
+	// Geracao aleatoria dos diamantes
 	public void setRandomDiamante(int min, int max){
 		Random randx = new Random();
 		int randomDiamante = randx.nextInt((max-min)+1) + min;
 		this.diamond = randomDiamante;
 	}
 	
+	// Geracao aleatoria de ouro
 	public void setRandomOuro(int min, int max){
 		Random randx = new Random();
 		int randomOuro = randx.nextInt((max-min)+1) + min;
@@ -56,7 +61,8 @@ public class Itens {
 	public int getPot() {
 		return pot;
 	}
-
+	
+	// Geracao aleatoria das poções
 	public void setRandomPot(int min, int max){
 		Random randx = new Random();
 		int randomPot = randx.nextInt((max-min)+1) + min;

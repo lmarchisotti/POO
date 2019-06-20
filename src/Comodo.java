@@ -48,7 +48,7 @@ public class Comodo {
 		JSONParser parser = new JSONParser();
 		ArrayList<Comodo> comodos = new ArrayList<Comodo>();
 		
-		// Leio json
+		// Leitura do arquivo de configuracao do json
 		Reader in = new InputStreamReader(Game.class.getResourceAsStream(caminhoarquivo));
 		JSONObject json;
 		
