@@ -136,8 +136,11 @@ public class Comodo {
 				//adiciono sala na lista de salas do mapa
 				sala.setIsSala(true);
 				comodos.add(sala);
-			}		
-			for(int i=1;i<=jsonCorredores.size();i++){
+			}
+			
+			System.out.println("teste:"+jsonCorredores.size());
+			for(int i = 1; i <= jsonCorredores.size(); i++){
+				
 				JSONObject jsonCorredor = (JSONObject) jsonCorredores.get(String.valueOf(i));
 				Corredor corredor = new Corredor();
 				corredor.setId(jsonCorredor.get("id").toString());
