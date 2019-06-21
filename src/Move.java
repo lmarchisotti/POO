@@ -23,7 +23,7 @@ public class Move {
 			if (porta == null) {
 				
 				// nao tem porta com identificador especificado
-				System.out.println("Não existe nenhuma porta com o identificador especificado. (" + door + ")");
+				System.out.println("Nao existe nenhuma porta com o identificador especificado. (" + door + ")");
 				return 0;
 			} else {
 				
@@ -46,7 +46,7 @@ public class Move {
 							jogador.setComodoAtual(
 									Corredor.getCorredorByIdentificador(map.getComodos(), porta.getSaida()));
 						} else {
-							System.out.println("Porta está trancada e você não possui chave.");
+							System.out.println("Porta esta trancada e voce nao possui chave.");
 							return 0;
 						}
 					} else {
@@ -54,7 +54,7 @@ public class Move {
 					}
 
 				} else {
-					// esta num corredor, manda ele pra sala
+					// Se esta em algum corredor, manda pra sala.
 					jogador.setComodoAtual(Salas.getSalaByIdentificador(map.getComodos(), porta.getEntrada()));
 				}
 			}
@@ -84,7 +84,7 @@ public class Move {
 				}
 			}
 		} else {
-			System.out.println("Você está em um corredor. Não existe este item aqui.");
+			System.out.println("Voce esta em um corredor. Nao existe este item aqui.");
 		}
 	}
 

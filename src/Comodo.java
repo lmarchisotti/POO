@@ -83,8 +83,8 @@ public class Comodo {
 				tamanhosGerados.add(tamanho);			
 				sala.setPisos(new ArrayList<Pisos>());
 
-				for(int x = 0; x < sala.getTamanho() / 2; x++){ // Percorre 10 posicoes relacionadas ao "x".
-					for(int y = 0; y < sala.getTamanho() / 2; y++){ // Percorre 10 posicoes relacionadas ao "y".
+				for(int x = 0; x < sala.getTamanho() / 2; x++){ // Percorre relacionadas ao "x".
+					for(int y = 0; y < sala.getTamanho() / 2; y++){ // Percorre relacionadas ao "y".
 						Pisos p = new Pisos();					
 						p.setX(x);
 						p.setY(y);
@@ -113,32 +113,31 @@ public class Comodo {
 				}
 
 				boolean colocouChave = false;
-				for(int j=1;j<=jsonPortas.size();j++){
+				for(int j = 1; j <= jsonPortas.size(); j++){
 					JSONObject jsonPorta = (JSONObject) jsonPortas.get(String.valueOf(j));
 					Portas porta = new Portas();
 					porta.setEntrada(sala.getSalasId());
 					String idPorta = (String) jsonPorta.get("identificador");
 					porta.setNome(idPorta.charAt(0));
-					//essa saida se refere ao corredor de saida da porta
+					
+					// Essa saida se refere ao corredor de saida da porta.
 					porta.setEntrada(sala.getSalasId());
 					porta.setSaida(Integer.parseInt((String) jsonPorta.get("corredor")));
 					
 					porta.setSalaTrancada(random.nextBoolean());
+					// Coloco uma chave na sala.
 					if(porta.getSalaTrancada() && !colocouChave){
-						//coloco uma chave na sala
 						colocouChave = true;
-						//coloco uma chave na sala
 						sala.getPisos().get(0).getItens().get(0).setChave();						
 					}
 					sala.getPortas().add(porta);					
 				}	
 				
-				//adiciono sala na lista de salas do mapa
+				// Adiciona sala na lista de salas do mapa.
 				sala.setIsSala(true);
 				comodos.add(sala);
 			}
 			
-			System.out.println("teste:"+jsonCorredores.size());
 			for(int i = 1; i <= jsonCorredores.size(); i++){
 				
 				JSONObject jsonCorredor = (JSONObject) jsonCorredores.get(String.valueOf(i));
@@ -146,8 +145,10 @@ public class Comodo {
 				corredor.setId(jsonCorredor.get("id").toString());
 				ArrayList<Portas> portas = new ArrayList<Portas>();
 				JSONObject jsonPortas = (JSONObject) jsonCorredor.get("portas");
-				for(int j=1;j<=jsonPortas.size();j++){
-					//aqui devo procurar a porta correspondente que ja foi criada no momento da inicializacao das salas
+				
+				for(int j = 1; j <= jsonPortas.size(); j++){
+
+					// Procura a porta que foi criada no momento da inicializacao das salas.
 					JSONObject jsonPorta = (JSONObject) jsonPortas.get(String.valueOf(j));
 					String idPorta = jsonPorta.get("identificador").toString();
 					Integer salaSaida = new Integer(jsonPorta.get("sala").toString());
@@ -155,17 +156,18 @@ public class Comodo {
 						if(c.getIsSala()){
 							Salas s = (Salas) c;
 							if(s.getSalasId() == salaSaida){
-								//achou a sala, agora tenho q achar a porta
+								// Encontrou a sala. Agora e necessário achar a porta.
 								for(Portas p : s.getPortas()){
+									// Encontrou a porta.
 									if(p.getNome() == idPorta.charAt(0)){
-										//achou
 										portas.add(p);
 										break;
 									}
 								}
 							}
 						}						
-					}					
+					}
+					
 				}
 				corredor.setPortas(portas);
 				corredor.setIsSala(false);
@@ -205,7 +207,7 @@ public class Comodo {
 			System.out.println("A quantidade de diamantes: " + somaDiamante);	
 			System.out.println("A quantidade de potions: " + quantPot);
 			System.out.println("A quantidade de chaves: " + quantKey);
-			if(quantAxe> 0){
+			if(quantAxe > 0){
 				System.out.println("Contem um machado.");
 			}
 		

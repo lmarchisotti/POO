@@ -152,7 +152,7 @@ public class Janela extends JFrame{
 	// ==============================================================================
 	// Construtor da janela base
 	public Janela(){
-		setSize(905, 705);
+		setSize(1100, 900);
 		setVisible(true);
 		setTitle("TP2 - POO");
 		setResizable(false);
