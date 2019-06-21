@@ -62,7 +62,7 @@ public class Itens {
 		return pot;
 	}
 	
-	// Geracao aleatoria das poções
+	// Geracao aleatoria das pocoes
 	public void setRandomPot(int min, int max){
 		Random randx = new Random();
 		int randomPot = randx.nextInt((max-min)+1) + min;

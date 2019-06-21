@@ -27,7 +27,7 @@ public class Move {
 				return 0;
 			} else {
 				
-				// verificar se o jogador está num corredor ou na sala
+				// verificar se o jogador esta num corredor ou na sala
 				if (jogador.getComodoAtual().getIsSala()) {
 					
 					// esta numa sala, mandar esse bosta pro corredor

@@ -147,7 +147,7 @@ public class Comodo {
 				ArrayList<Portas> portas = new ArrayList<Portas>();
 				JSONObject jsonPortas = (JSONObject) jsonCorredor.get("portas");
 				for(int j=1;j<=jsonPortas.size();j++){
-					//aqui devo procurar a porta correspondente que ja foi criada no momento da inicialização das salas
+					//aqui devo procurar a porta correspondente que ja foi criada no momento da inicializacao das salas
 					JSONObject jsonPorta = (JSONObject) jsonPortas.get(String.valueOf(j));
 					String idPorta = jsonPorta.get("identificador").toString();
 					Integer salaSaida = new Integer(jsonPorta.get("sala").toString());

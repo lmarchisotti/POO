@@ -114,26 +114,26 @@ public class Janela extends JFrame{
 	public void setLabelPotionJogador(Janela janela, boolean val, int quant){
 		janela.labelPocaoJogador.setVisible(val);
 		janela.labelTextoPotion.setVisible(val);
-		janela.labelTextoPotion.setText("==> Possui " + quant + ".");
+		janela.labelTextoPotion.setText("Possui " + quant + ".");
 	}
 	
 	public void setLabelKeyJogador(Janela janela, boolean val, int quant){
 		janela.labelKeyJogador.setVisible(val);
 		janela.labelTextoKey.setVisible(val);
-		janela.labelTextoKey.setText("==> Possui " + quant + ".");
+		janela.labelTextoKey.setText("Possui " + quant + ".");
 	}
 		
 	public void setLabelMachadoJogador(Janela janela, boolean val, int quant){
 		janela.labelMachadoJogador.setVisible(val);
 		janela.labelTextoMachado.setVisible(val);
-		janela.labelTextoMachado.setText("==> Possui " + quant + ".");
+		janela.labelTextoMachado.setText("Possui " + quant + ".");
 	}
 	
 	public void setLabelGoldJogador(Janela janela, boolean val, int quant){
 		janela.labelGoldJogador.setVisible(val);
 		janela.labelTextoGold.setVisible(val);
 		if(quant > 0){
-			janela.labelTextoGold.setText("==> Possui " + quant + ".");
+			janela.labelTextoGold.setText("Possui " + quant + ".");
 		}else{
 			janela.labelTextoGold.setVisible(val);
 		}
@@ -143,7 +143,7 @@ public class Janela extends JFrame{
 		janela.labelDiamondJogador.setVisible(val);
 		if(quant > 0){
 			janela.labelTextoDiamond.setVisible(val);
-			janela.labelTextoDiamond.setText("==> Possui " + quant + ".");
+			janela.labelTextoDiamond.setText("Possui " + quant + ".");
 		}else{
 			janela.labelTextoDiamond.setVisible(val);
 		}
