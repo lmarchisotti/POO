@@ -125,7 +125,7 @@ public class Game extends Janela {
 			// Exibe o troll da sala
 			janela.setLabelTroll(janela, false);
 			for(int i = 0; i < troll.size(); i++){
-				if ((troll.get(i).getComodoAtual() == jogador.getComodoAtual()) && troll.get(i).isVivo()){
+				if ((troll.get(i).getComodoAtual() == jogador.getComodoAtual()) && troll.get(i).trollVivo()){
 					janela.setLabelTroll(janela, true);
 				}
 			}
@@ -133,7 +133,7 @@ public class Game extends Janela {
 			ler = scanner.nextLine();
 			palavra = ler.split(" ");
 			for (Trolls t : troll) {
-				if (jogador.getComodoAtual().equals(t.getComodoAtual()) && t.isVivo() == true){
+				if (jogador.getComodoAtual().equals(t.getComodoAtual()) && t.trollVivo() == true){
 					x = 1;
 				}
 			}

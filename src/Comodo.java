@@ -212,8 +212,8 @@ public class Comodo {
 			}
 		
 			for (int i = 0; i < troll.size(); i++){
-				if(troll.get(i).getComodoAtual().equals(jogador.getComodoAtual()) && troll.get(i).isVivo() == true){
-					System.out.println("Troll na sala:" + troll.get(i).getNt());
+				if(troll.get(i).getComodoAtual().equals(jogador.getComodoAtual()) && troll.get(i).trollVivo() == true){
+					System.out.println("Troll na sala:" + troll.get(i).getNomeTroll());
 				}
 			}
 		}else{

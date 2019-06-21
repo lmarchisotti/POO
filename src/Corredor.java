@@ -22,7 +22,7 @@ public class Corredor extends Comodo{
 		}
 		String trollsCorredor = "";
 		for(Trolls t : corredor.getTroll()){
-			String str = String.valueOf(t.getNt());
+			String str = String.valueOf(t.getNomeTroll());
 			trollsCorredor = trollsCorredor.concat(str).concat(", ");
 		}
 		if(trollsCorredor.length() == 0){
