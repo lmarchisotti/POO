@@ -90,7 +90,7 @@ public class Janela extends JFrame{
 	}
 	
 	public void setLabelMac(Janela janela, boolean val){
-		janela.labelMachado.setVisible(true);
+		janela.labelMachado.setVisible(val);
 	}
 	
 	public void setLabelTroll(Janela janela, boolean val){
@@ -156,7 +156,7 @@ public class Janela extends JFrame{
 	// ==============================================================================
 	// Construtor da janela base
 	public Janela(){
-		setSize(815, 990);
+		setSize(815, 575);
 		setVisible(true);
 		setTitle("TP2 - POO");
 		setResizable(false);
@@ -168,15 +168,15 @@ public class Janela extends JFrame{
 		add(portaA);
 		add(portaB);
 		add(portaC);
-		portaA.setBounds(355, 70, 55, 30);
-		portaB.setBounds(720, 330, 55, 30);
-		portaC.setBounds(355, 580, 55, 30);	
+		portaA.setBounds(355, 50, 55, 30);
+		portaB.setBounds(705, 190, 55, 30);
+		portaC.setBounds(355, 340, 55, 30);	
 		
 		// Titulos
 		add(labelMochila);
 		add(labelSala);
-		labelMochila.setBounds(360, 535, 250, 250);
 		labelSala.setBounds(370, -105, 250, 250);
+		labelMochila.setBounds(360, 300, 250, 250);
 		
 		// ----------------------------------------------------
 		// Mochila
@@ -184,73 +184,73 @@ public class Janela extends JFrame{
 		// Machados
 		add(labelMachadoJogador);
 		add(labelTextoMachado);
-		labelMachadoJogador.setBounds(150, 705, 70, 70);
-		labelTextoMachado.setBounds(160, 735, 240, 100);
+		labelMachadoJogador.setBounds(150, 435, 70, 70);
+		labelTextoMachado.setBounds(160, 455, 240, 100);
 
 		// Pocoes
 		add(labelPocaoJogador);
 		add(labelTextoPotion);
-		labelPocaoJogador.setBounds(370, 705, 70, 70);
-		labelTextoPotion.setBounds(380, 735, 240, 100);
+		labelPocaoJogador.setBounds(370, 435, 70, 70);
+		labelTextoPotion.setBounds(380, 455, 240, 100);
 				
 		// Chaves
 		add(labelKeyJogador);
 		add(labelTextoKey);
-		labelKeyJogador.setBounds(600, 705, 70, 70);
-		labelTextoKey.setBounds(610, 735, 240, 100);
+		labelKeyJogador.setBounds(600, 435, 70, 70);
+		labelTextoKey.setBounds(610, 455, 240, 100);
 				
 		// Ouro
 		add(labelGoldJogador);
 		add(labelTextoGold);
-		labelGoldJogador.setBounds(260, 835, 70, 70);
-		labelTextoGold.setBounds(270, 860, 240, 100);
+		labelGoldJogador.setBounds(260, 435, 70, 70);
+		labelTextoGold.setBounds(270, 455, 240, 100);
 				
 		// Diamante
 		add(labelDiamondJogador);
 		add(labelTextoDiamond);
-		labelDiamondJogador.setBounds(495, 835, 70, 70);
-		labelTextoDiamond.setBounds(505, 860, 240, 100);
+		labelDiamondJogador.setBounds(495, 435, 70, 70);
+		labelTextoDiamond.setBounds(505, 455, 240, 100);
 
 		// ----------------------------------------------------
 		// Sala
 		
 		// Pocao
 		add(labelPotion);
-		labelPotion.setBounds(55, 80, 50, 70);	
+		labelPotion.setBounds(55, 37, 50, 70);	
 		
 		// Machado
 		add(labelMachado);
-		labelMachado.setBounds(55, 160, 70, 70);
+		labelMachado.setBounds(115, 37, 70, 70);
 		
 		// Chave 
 		add(labelKey);
-		labelKey.setBounds(55, 240, 70, 70);	
+		labelKey.setBounds(55, 95, 70, 70);	
 		
 		// Ouro
 		add(labelGold);
 		add(contGold);
-		labelGold.setBounds(55, 520, 70, 60);
-		contGold.setBounds(78, 528, 120, 120);
+		labelGold.setBounds(55, 280, 70, 60);
+		contGold.setBounds(78, 285, 120, 120);
 		
 		// Diamante
 		add(labelDiamond);
 		add(contDiamond);
-		labelDiamond.setBounds(55, 425, 70, 60);
-		contDiamond.setBounds(78, 432, 120, 120);
+		labelDiamond.setBounds(55, 200, 70, 60);
+		contDiamond.setBounds(78, 207, 120, 120);
 		
 		// Troll
 		add(labelTroll);
-		labelTroll.setBounds(320, 285, 140, 120);
+		labelTroll.setBounds(320, 140, 140, 120);
 
 		// ----------------------------------------------------
 		// Molduras
 		
 		// Sala
 		add(labelFrame1);
-		labelFrame1.setBounds(5, 40, 800, 600);
+		labelFrame1.setBounds(5, -95, 800, 600);
 
 		// Mochila
 		add(labelFrame2);
-		labelFrame2.setBounds(5, 680, 800, 280);
+		labelFrame2.setBounds(5, 335, 800, 280);
 	}
 }

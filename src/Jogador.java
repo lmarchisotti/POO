@@ -3,8 +3,7 @@ public class Jogador {
 	private int ouro;			// bag de ouro
     private int diamante;		// bag de diamante
     private int bagAxe; 		// bag de machados
-        
-    
+
     // Getters e Setters da localizacao atual, ouro, diamante, chaves, poçoes
     public Comodo getComodoAtual() {
 		return comodoAtual;
