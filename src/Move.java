@@ -71,7 +71,7 @@ public class Move {
 					somaOuro += item.getOuro();
 				}
 			}
-			// lembrar que aqui tem que percorrer todos os pisos da sala atual
+			
 			if (somaOuro == 0) {
 				System.out.println("Nao ha ouro na sala");
 			} else {
@@ -96,7 +96,7 @@ public class Move {
 					somaDiamante += item.getDiamond();
 				}
 			}
-			// lembrar que aqui tem que percorrer todos os pisos da sala atual
+			
 			if (somaDiamante == 0) {
 				System.out.println("Nao ha diamante nesta sala");
 			} else {
@@ -109,7 +109,7 @@ public class Move {
 				}
 			}
 		} else {
-			System.out.println("Você está em um corredor. Não existe este item aqui.");
+			System.out.println("Voce esta em um corredor. Nao existe este item aqui.");
 		}
 	}
 
@@ -122,7 +122,7 @@ public class Move {
 				}
 			}
 			if (quantChaves == 0) {
-				System.out.println("Não ha pocao nesta sala");
+				System.out.println("Nao ha pocao nesta sala");
 			} else {
 
 				jogador.setBagPot(jogador.getBagPot() + quantChaves);
@@ -135,7 +135,7 @@ public class Move {
 				System.out.println("Quantidade de itens na bag de potions: " + jogador.getBagPot());
 			}
 		} else {
-			System.out.println("Você está em um corredor. Não existe este item aqui.");
+			System.out.println("Voce esta em um corredor. Nao existe este item aqui.");
 		}
 
 	}
@@ -162,7 +162,7 @@ public class Move {
 				System.out.println("Quantidade de itens na bag de chaves: " + jogador.getBagKey());
 			}
 		} else {
-			System.out.println("Você está em um corredor. Não existe este item aqui.");
+			System.out.println("Voce esta em um corredor. Nao existe este item aqui.");
 		}
 	}
 
@@ -175,7 +175,7 @@ public class Move {
 				}
 			}
 			if (quantAxe == 0) {
-				System.out.println("Não há machado nesta sala");
+				System.out.println("Nao ha machado nesta sala");
 			} else {
 				jogador.setBagAxe(jogador.getBagAxe() + quantAxe);
 				jogador.setBagAxe(jogador.getBagAxe() + quantAxe);
@@ -187,7 +187,7 @@ public class Move {
 				System.out.println("Quantidade de itens na bag: " + jogador.getBagAxe());
 			}
 		} else {
-			System.out.println("Você está em um corredor. Não existe este item aqui.");
+			System.out.println("Voce esta em um corredor. Nao existe este item aqui.");
 		}
 	}
 
@@ -230,14 +230,14 @@ public class Move {
 	public void dropAxe(Mapa map, Jogador jogador) {
 		if (jogador.getComodoAtual().getIsSala()) {
 			if (jogador.getBagAxe() == 0) {
-				System.out.println("Não há machados na bag");
+				System.out.println("Nao ha machados na bag");
 			} else {
 				jogador.setBagAxe(jogador.getBagAxe() - 1);
 				jogador.setBagAxe(jogador.getBagAxe() - 1);
 				((Salas) jogador.getComodoAtual()).getPisos().get(0).getItens().get(0).setRandomMachado(1, 1);
 			}
 		} else {
-			System.out.println("Você está em um corredor. Não existe este item aqui.");
+			System.out.println("Voce esta em um corredor. Nao existe este item aqui.");
 		}
 	}
 
@@ -257,7 +257,7 @@ public class Move {
 					quantAxe += item.getMachado();
 				}
 			}
-			// Machado
+			
 			if (quantAxe > 0 && trolls.get(i).getComodoAtual() == jogador.getComodoAtual()) {
 				for (int j = 0; j < ((Salas) jogador.getComodoAtual()).getPisos().size(); j++) {
 					for (Itens item : ((Salas) jogador.getComodoAtual()).getPisos().get(j).getItens()) {
@@ -267,10 +267,10 @@ public class Move {
 				if (jogador.getBagPot() == 0) {
 					jogador.setOuro(0);
 					jogador.setDiamante(0);
-					System.out.println("Voce nao tinha pocao, perdeu ouro e diamante");
+					System.out.println("Troll te atacou e voce nao tinha pocao. Perdeu ouro e diamante!");
 				} else {
 					jogador.setBagPot(jogador.getBagPot() - 1);
-					System.out.println("Voce tinha pocao, perdeu 1 pocao");
+					System.out.println("Troll te atacou e voce tinha pocao. Perdeu 1 pocao!");
 				}
 			}
 		}

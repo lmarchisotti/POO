@@ -46,7 +46,6 @@ public class Game extends Janela {
 				janela.setIdSala(janela, 0); // "0" mostra que está no corredor.
 			}
 			
-			
 			// Exibe as pocoes na interface grafica
 			if (jogador.getComodoAtual().getIsSala()) {
 				if (((Salas) jogador.getComodoAtual()).getPisos().get(0).getItens().get(0).getPot() > 0) {
