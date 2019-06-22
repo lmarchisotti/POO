@@ -98,7 +98,7 @@ public class Move {
 			}
 			// lembrar que aqui tem que percorrer todos os pisos da sala atual
 			if (somaDiamante == 0) {
-				System.out.println("N�o h� diamante nesta sala");
+				System.out.println("Nao ha diamante nesta sala");
 			} else {
 				jogador.setDiamante(jogador.getDiamante() + somaDiamante);
 				System.out.println("Quantidade de diamantes coletados na sala: " + somaDiamante);
@@ -230,7 +230,7 @@ public class Move {
 	public void dropAxe(Mapa map, Jogador jogador) {
 		if (jogador.getComodoAtual().getIsSala()) {
 			if (jogador.getBagAxe() == 0) {
-				System.out.println("Não há machados de ferro na bag");
+				System.out.println("Não há machados na bag");
 			} else {
 				jogador.setBagAxe(jogador.getBagAxe() - 1);
 				jogador.setBagAxe(jogador.getBagAxe() - 1);
