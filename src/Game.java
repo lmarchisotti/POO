@@ -39,8 +39,13 @@ public class Game extends Janela {
 			x = 0;
 			
 			// Exibe a id da Sala.
-			Salas comodo = (Salas)jogador.getComodoAtual();
-			janela.setIdSala(janela, comodo.getSalasId());
+			if (jogador.getComodoAtual() instanceof Salas) {
+				Salas comodo = (Salas)jogador.getComodoAtual();
+				janela.setIdSala(janela, comodo.getSalasId());
+			} else {
+				janela.setIdSala(janela, 0); // "0" mostra que está no corredor.
+			}
+			
 			
 			// Exibe as pocoes na interface grafica
 			if (jogador.getComodoAtual().getIsSala()) {
