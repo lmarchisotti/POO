@@ -118,6 +118,7 @@ public class Game extends Janela {
 				}
 			}
 			
+			// Comandos para jogar o game.
 			if (palavra[0].equals("view")) {
 				comodos.get(0).view(jogador, troll);
 			} else if (palavra[0].equals("moveTo")) {
