@@ -124,7 +124,7 @@ public class Game extends Janela {
 				ler = scanner.nextLine();
 				palavra2 = ler.split(" ");
 				if (palavra[1].equals("A") || palavra[1].equals("B") || palavra[1].equals("C")) {
-					if (palavra2[0].equals("Exit")) {
+					if (palavra2[0].equals("door")) {
 						movimento.moveTo(map, palavra[1], jogador.getComodoAtual(), jogador);
 						movimento.moveTroll(map, troll, jogador);
 					}
