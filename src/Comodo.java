@@ -153,12 +153,12 @@ public class Comodo {
 					String idPorta = jsonPorta.get("identificador").toString();
 					Integer salaSaida = new Integer(jsonPorta.get("sala").toString());
 					for(Comodo c : comodos){
+						// Encontra a sala. Caso encontrar e necessario achar a porta.
 						if(c.getIsSala()){
 							Salas s = (Salas) c;
 							if(s.getSalasId() == salaSaida){
-								// Encontrou a sala. Agora e necessário achar a porta.
 								for(Portas p : s.getPortas()){
-									// Encontrou a porta.
+									// Encontra a porta.
 									if(p.getNome() == idPorta.charAt(0)){
 										portas.add(p);
 										break;

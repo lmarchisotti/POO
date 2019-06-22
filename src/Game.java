@@ -48,11 +48,7 @@ public class Game extends Janela {
 			} else {
 				janela.setLabelPotion(janela, false);
 			}
-			if (jogador.getBagPot() > 0) {
-				janela.setLabelPotionJogador(janela, true, jogador.getBagPot());
-			} else {
-				janela.setLabelPotionJogador(janela, false, 0);
-			}
+			janela.setLabelPotionJogador(janela, true, jogador.getBagPot());
 			
 			// Exibe as chaves na interface grafica
 			if (jogador.getComodoAtual().getIsSala()) {
@@ -64,11 +60,7 @@ public class Game extends Janela {
 			} else {
 				janela.setLabelKey(janela, false);
 			}
-			if (jogador.getBagKey() > 0) {
-				janela.setLabelKeyJogador(janela, true, jogador.getBagKey());
-			} else {
-				janela.setLabelKeyJogador(janela, false, 0);
-			}
+			janela.setLabelKeyJogador(janela, true, jogador.getBagKey());
 			
 			// Exibe o machado na interface grafica
 			if (jogador.getComodoAtual().getIsSala()) {
@@ -80,11 +72,7 @@ public class Game extends Janela {
 			} else {
 				janela.setLabelMac(janela, false);
 			}
-			if (jogador.getBagAxe() > 0) {
-				janela.setLabelMachadoJogador(janela, true, jogador.getBagAxe());
-			} else {
-				janela.setLabelMachadoJogador(janela, false, 0);
-			}
+			janela.setLabelMachadoJogador(janela, true, jogador.getBagAxe());
 			
 			// Exibe as pecas de ouro na interface grafica
 			int somaOuro = 0;
@@ -104,23 +92,15 @@ public class Game extends Janela {
 			} else {
 				janela.setLabelGold(janela, false, 0);
 			}
-			if (jogador.getOuro() > 0) {
-				janela.setLabelGoldJogador(janela, true, jogador.getOuro());
-			} else {
-				janela.setLabelGoldJogador(janela, false, 0);
-			}
+			janela.setLabelGoldJogador(janela, true, jogador.getOuro());
 			
-			// Exibe as peças de diamante na interface gráfica
+			// Exibe as pecas de diamante na interface grafica
 			if (somaDiamante > 0) {
 				janela.setLabelDiamond(janela, true, somaDiamante);
 			} else {
 				janela.setLabelDiamond(janela, false, 0);
 			}
-			if (jogador.getDiamante() > 0) {
-				janela.setLabelDiamondJogador(janela, true, jogador.getDiamante());
-			} else {
-				janela.setLabelDiamondJogador(janela, false, 0);
-			}
+			janela.setLabelDiamondJogador(janela, true, jogador.getDiamante());
 			
 			// Exibe o troll da sala
 			janela.setLabelTroll(janela, false);
@@ -139,11 +119,8 @@ public class Game extends Janela {
 			}
 			
 			if (palavra[0].equals("view")) {
-
 				comodos.get(0).view(jogador, troll);
-			}
-
-			else if (palavra[0].equals("moveTo")) {
+			} else if (palavra[0].equals("moveTo")) {
 				ler = scanner.nextLine();
 				palavra2 = ler.split(" ");
 				if (palavra[1].equals("A") || palavra[1].equals("B") || palavra[1].equals("C")) {
