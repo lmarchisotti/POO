@@ -38,6 +38,10 @@ public class Game extends Janela {
 		while (true) {
 			x = 0;
 			
+			// Exibe a id da Sala.
+			Salas comodo = (Salas)jogador.getComodoAtual();
+			janela.setIdSala(janela, comodo.getSalasId());
+			
 			// Exibe as pocoes na interface grafica
 			if (jogador.getComodoAtual().getIsSala()) {
 				if (((Salas) jogador.getComodoAtual()).getPisos().get(0).getItens().get(0).getPot() > 0) {

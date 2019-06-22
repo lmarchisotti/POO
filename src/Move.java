@@ -12,7 +12,7 @@ public class Move {
 			viewBag(jogador);
 		} else {
 			
-			// moveTo - percorre cada porta pra ver se alguma bate com a especificada
+			// moveTo - percorre cada porta pra ver se alguma bate com a especificada.
 			Portas porta = null;
 			for (Portas p : comodo.getPortas()) {
 				if (p.getNome() == door.charAt(0)) {
@@ -22,15 +22,15 @@ public class Move {
 			}
 			if (porta == null) {
 				
-				// nao tem porta com identificador especificado
+				// Nao tem porta com identificador especificado.
 				System.out.println("Nao existe nenhuma porta com o identificador especificado. (" + door + ")");
 				return 0;
 			} else {
 				
-				// verificar se o jogador esta num corredor ou na sala
+				// Verifica se o jogador esta num corredor ou na sala.
 				if (jogador.getComodoAtual().getIsSala()) {
 					
-					// esta numa sala, mandar esse bosta pro corredor
+					// Esta numa sala, mandar pro corredor.
 					if (porta.getSalaTrancada()) {
 						if (jogador.getBagKey() > 0) {
 						

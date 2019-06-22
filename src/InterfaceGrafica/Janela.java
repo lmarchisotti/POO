@@ -11,6 +11,7 @@ public class Janela extends JFrame{
 	
 	JLabel labelMochila = new JLabel("Mochila");
 	JLabel labelSala = new JLabel("Sala");
+	JLabel labelIdSala = new JLabel();
 	
 	// ==============================================================================
 	// Atributos para construcao da janela.
@@ -113,6 +114,11 @@ public class Janela extends JFrame{
 		}
 	}
 	
+	public void setIdSala(Janela janela, Integer idSala) {
+		janela.labelIdSala.setVisible(true);
+		janela.labelIdSala.setText(idSala.toString());
+	}
+	
 	// ==============================================================================
 	// Metodos para visualizacao dos itens da mochila
 	public void setLabelPotionJogador(Janela janela, boolean val, int quant){
@@ -171,12 +177,14 @@ public class Janela extends JFrame{
 		portaA.setBounds(355, 50, 55, 30);
 		portaB.setBounds(705, 190, 55, 30);
 		portaC.setBounds(355, 340, 55, 30);	
-		
+
 		// Titulos
-		add(labelMochila);
 		add(labelSala);
+		add(labelMochila);
+		add(labelIdSala);
 		labelSala.setBounds(370, -105, 250, 250);
 		labelMochila.setBounds(360, 300, 250, 250);
+		labelIdSala.setBounds(380, -94, 250, 250);
 		
 		// ----------------------------------------------------
 		// Mochila
