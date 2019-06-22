@@ -18,7 +18,7 @@ public class Game extends Janela {
 
 		Move movimento = new Move();
 		Jogador jogador = new Jogador();
-		jogador.setComodoAtual(Salas.getSalaByIdentificador(comodos, 3));
+		jogador.setComodoAtual(Salas.getSalaByIdentificador(comodos, 1));
 		jogador.setBagAxe(0);
 		jogador.setBagKey(0);
 		jogador.setBagPot(0);
