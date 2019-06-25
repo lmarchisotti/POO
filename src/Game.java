@@ -130,15 +130,15 @@ public class Game extends Janela {
 			if (palavra[0].equals("view")) {
 				comodos.get(0).view(jogador, troll);
 			} else if (palavra[0].equals("moveTo")) {
-				ler = scanner.nextLine();
-				palavra2 = ler.split(" ");
 				if (palavra[1].equals("A") || palavra[1].equals("B") || palavra[1].equals("C")) {
-					if (palavra2[0].equals("door")) {
+					if (palavra[2].equals("door")) {
 						movimento.moveTo(map, palavra[1], jogador.getComodoAtual(), jogador);
 						movimento.moveTroll(map, troll, jogador);
 					}
 				} else if (palavra[1].equals("gold") || palavra[1].equals("diamond") || palavra[1].equals("axe")
 						|| palavra[1].equals("pot") || palavra[1].equals("key")) {
+					ler = scanner.nextLine();
+					palavra2 = ler.split(" ");
 					if (palavra2[0].equals("pickUp")) {
 
 						if (palavra2[1].equals("gold")) {
