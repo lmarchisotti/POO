@@ -2,7 +2,6 @@ import java.util.Random;
 
 public class Itens {
 	
-	// 
 	private int ouro = 0;
 	private int diamond = 0;
 	private int pot = 0;
