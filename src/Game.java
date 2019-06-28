@@ -19,22 +19,30 @@ public class Game extends Janela {
 		Move movimento = new Move();
 		Jogador jogador = new Jogador();
 		jogador.setComodoAtual(Salas.getSalaByIdentificador(comodos, 1));
-		jogador.setBagAxe(0);
-		jogador.setBagKey(0);
-		jogador.setBagPot(0);
+		jogador.getMochila().setBagAxe(0);
+		jogador.getMochila().setBagKey(0);
+		jogador.getMochila().setBagPot(0);
 		
+		// Adiciona trolls na lista de trolls e nas salas.
 		ArrayList<Trolls> troll = new ArrayList<Trolls>();
-		Trolls troll1 = new Trolls("TrolldaCaverna", map.getComodos().get(2), true); troll.add(troll1);
-		Trolls troll2 = new Trolls("TrolldaCaverna", map.getComodos().get(4), true); troll.add(troll2);
-		Trolls troll3 = new Trolls("TrolldaCaverna", map.getComodos().get(5), true); troll.add(troll3);
-		Trolls troll4 = new Trolls("TrollGuerreiro", map.getComodos().get(8), true); troll.add(troll4);
-		Trolls troll5 = new Trolls("TrollGuerreiro", map.getComodos().get(10), true); troll.add(troll5);
-		Trolls troll6 = new Trolls("TrollGuerreiro", map.getComodos().get(14), true); troll.add(troll6);
-			
+		Trolls troll1 = new Trolls("TrolldaCaverna", map.getComodos().get(2), true);
+		troll.add(troll1);
+		Trolls troll2 = new Trolls("TrolldaCaverna", map.getComodos().get(4), true);
+		troll.add(troll2);
+		Trolls troll3 = new Trolls("TrolldaCaverna", map.getComodos().get(8), true);
+		troll.add(troll3);
+		Trolls troll4 = new Trolls("TrollGuerreiro", map.getComodos().get(12), true);
+		troll.add(troll4);
+		Trolls troll5 = new Trolls("TrollGuerreiro", map.getComodos().get(15), true);
+		troll.add(troll5);
+		Trolls troll6 = new Trolls("TrollGuerreiro", map.getComodos().get(19), true);
+		troll.add(troll6);
+
 		int x = 0;
 		String ler;
 		String[] palavra = new String[3];
 		String[] palavra2 = new String[3];
+		
 		while (true) {
 			x = 0;
 			
@@ -56,7 +64,7 @@ public class Game extends Janela {
 			} else {
 				janela.setLabelPotion(janela, false);
 			}
-			janela.setLabelPotionJogador(janela, true, jogador.getBagPot());
+			janela.setLabelPotionJogador(janela, true, jogador.getMochila().getBagPot());
 			
 			// Exibe as chaves na interface grafica
 			if (jogador.getComodoAtual().getIsSala()) {
@@ -68,7 +76,7 @@ public class Game extends Janela {
 			} else {
 				janela.setLabelKey(janela, false);
 			}
-			janela.setLabelKeyJogador(janela, true, jogador.getBagKey());
+			janela.setLabelKeyJogador(janela, true, jogador.getMochila().getBagKey());
 			
 			// Exibe o machado na interface grafica
 			if (jogador.getComodoAtual().getIsSala()) {
@@ -80,7 +88,7 @@ public class Game extends Janela {
 			} else {
 				janela.setLabelMac(janela, false);
 			}
-			janela.setLabelMachadoJogador(janela, true, jogador.getBagAxe());
+			janela.setLabelMachadoJogador(janela, true, jogador.getMochila().getBagAxe());
 			
 			// Exibe as pecas de ouro na interface grafica
 			int somaOuro = 0;
@@ -100,7 +108,7 @@ public class Game extends Janela {
 			} else {
 				janela.setLabelGold(janela, false, 0);
 			}
-			janela.setLabelGoldJogador(janela, true, jogador.getOuro());
+			janela.setLabelGoldJogador(janela, true, jogador.getMochila().getOuro());
 			
 			// Exibe as pecas de diamante na interface grafica
 			if (somaDiamante > 0) {
@@ -108,7 +116,7 @@ public class Game extends Janela {
 			} else {
 				janela.setLabelDiamond(janela, false, 0);
 			}
-			janela.setLabelDiamondJogador(janela, true, jogador.getDiamante());
+			janela.setLabelDiamondJogador(janela, true, jogador.getMochila().getDiamante());
 			
 			// Exibe o troll da sala
 			janela.setLabelTroll(janela, false);
@@ -158,7 +166,7 @@ public class Game extends Janela {
 						}
 
 						if (palavra2[1].equals("axe")) {
-							if (jogador.getBagAxe() < 4) {
+							if (jogador.getMochila().getBagAxe() < 4) {
 								movimento.pickUpAxe(map, jogador);
 							} else {
 								System.out.println("Mochila de machados cheia");
@@ -166,7 +174,7 @@ public class Game extends Janela {
 						}
 
 						if (palavra2[1].equals("key")) {
-							if (jogador.getBagKey() < 3) {
+							if (jogador.getMochila().getBagKey() < 3) {
 								movimento.pickUpKey(map, jogador);
 							} else {
 								System.out.println("Mochila de chaves cheia");
@@ -174,7 +182,7 @@ public class Game extends Janela {
 						}
 						
 						if (palavra2[1].equals("pot")) {
-							if (jogador.getBagPot() < 3) {
+							if (jogador.getMochila().getBagPot() < 3) {
 								movimento.pickUpPotion(map, jogador);
 							} else {
 								System.out.println("Mochila de pocoes cheia");
@@ -197,7 +205,7 @@ public class Game extends Janela {
 			} else if (palavra[0].equals("throwAxe")) {
 				if (palavra[1].equals("TrollGuerreiro") || palavra[1].equals("TrolldaCaverna")) {
 					
-					if (jogador.getBagAxe() == 0) {
+					if (jogador.getMochila().getBagAxe() == 0) {
 						System.out.println("Nao ha machados na bag");
 					} else {
 						movimento.throwAxe(map, jogador, palavra[1]);

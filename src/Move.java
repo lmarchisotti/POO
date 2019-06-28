@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Move {
+	
 	public int comeca(Salas sala) {
 		int salaLocal = sala.getSalasId();
 		return salaLocal;
@@ -23,8 +24,9 @@ public class Move {
 			if (porta == null) {
 				
 				// Nao tem porta com identificador especificado.
-				System.out.println("Nao existe nenhuma porta com o identificador especificado. (" + door + ")");
+				System.out.println("Nao existe porta para (" + door + ").");
 				return 0;
+				
 			} else {
 				
 				// Verifica se o jogador esta num corredor ou na sala.
@@ -32,14 +34,14 @@ public class Move {
 					
 					// Esta numa sala, mandar pro corredor.
 					if (porta.getSalaTrancada()) {
-						if (jogador.getBagKey() > 0) {
+						if (jogador.getMochila().getBagKey() > 0) {
 						
 							if (door.equals("A")) {
 								((Salas) jogador.getComodoAtual()).getPortas().get(0).setSalaTrancada(false);
-								jogador.setBagKey(jogador.getBagKey() - 1);
+								jogador.getMochila().setBagKey(jogador.getMochila().getBagKey() - 1);
 							} else if (door.equals("B")) {
 								((Salas) jogador.getComodoAtual()).getPortas().get(1).setSalaTrancada(false);
-								jogador.setBagKey(jogador.getBagKey() - 1);
+								jogador.getMochila().setBagKey(jogador.getMochila().getBagKey() - 1);
 							}
 							
 							System.out.println("Porta destrancada!");
@@ -75,7 +77,7 @@ public class Move {
 			if (somaOuro == 0) {
 				System.out.println("Nao ha ouro na sala");
 			} else {
-				jogador.setOuro(jogador.getOuro() + somaOuro);
+				jogador.getMochila().setOuro(jogador.getMochila().getOuro() + somaOuro);
 				System.out.println("Quantidade de ouro coletado na sala: " + somaOuro);
 				for (int i = 0; i < ((Salas) jogador.getComodoAtual()).getPisos().size(); i++) {
 					for (Itens item : ((Salas) jogador.getComodoAtual()).getPisos().get(i).getItens()) {
@@ -100,7 +102,7 @@ public class Move {
 			if (somaDiamante == 0) {
 				System.out.println("Nao ha diamante nesta sala");
 			} else {
-				jogador.setDiamante(jogador.getDiamante() + somaDiamante);
+				jogador.getMochila().setDiamond(jogador.getMochila().getDiamante() + somaDiamante);
 				System.out.println("Quantidade de diamantes coletados na sala: " + somaDiamante);
 				for (int i = 0; i < ((Salas) jogador.getComodoAtual()).getPisos().size(); i++) {
 					for (Itens item : ((Salas) jogador.getComodoAtual()).getPisos().get(i).getItens()) {
@@ -125,14 +127,14 @@ public class Move {
 				System.out.println("Nao ha pocao nesta sala");
 			} else {
 
-				jogador.setBagPot(jogador.getBagPot() + quantChaves);
+				jogador.getMochila().setBagPot(jogador.getMochila().getBagPot() + quantChaves);
 				for (int i = 0; i < ((Salas) jogador.getComodoAtual()).getPisos().size(); i++) {
 					for (Itens item : ((Salas) jogador.getComodoAtual()).getPisos().get(i).getItens()) {
 						item.setRandomPot(0, 0);
 					}
 				}
 
-				System.out.println("Quantidade de itens na bag de potions: " + jogador.getBagPot());
+				System.out.println("Quantidade de itens na bag de potions: " + jogador.getMochila().getBagPot());
 			}
 		} else {
 			System.out.println("Voce esta em um corredor. Nao existe este item aqui.");
@@ -152,14 +154,14 @@ public class Move {
 				System.out.println("Nao ha chave nesta sala");
 			} else {
 
-				jogador.setBagKey(jogador.getBagKey() + quantChaves);
+				jogador.getMochila().setBagKey(jogador.getMochila().getBagKey() + quantChaves);
 				for (int i = 0; i < ((Salas) jogador.getComodoAtual()).getPisos().size(); i++) {
 					for (Itens item : ((Salas) jogador.getComodoAtual()).getPisos().get(i).getItens()) {
 						item.setRandomChave(0, 0);
 					}
 				}
 
-				System.out.println("Quantidade de itens na bag de chaves: " + jogador.getBagKey());
+				System.out.println("Quantidade de itens na bag de chaves: " + jogador.getMochila().getBagKey());
 			}
 		} else {
 			System.out.println("Voce esta em um corredor. Nao existe este item aqui.");
@@ -177,14 +179,14 @@ public class Move {
 			if (quantAxe == 0) {
 				System.out.println("Nao ha machado nesta sala");
 			} else {
-				jogador.setBagAxe(jogador.getBagAxe() + quantAxe);
-				jogador.setBagAxe(jogador.getBagAxe() + quantAxe);
+				jogador.getMochila().setBagAxe(jogador.getMochila().getBagAxe() + quantAxe);
+				jogador.getMochila().setBagAxe(jogador.getMochila().getBagAxe() + quantAxe);
 				for (int i = 0; i < ((Salas) jogador.getComodoAtual()).getPisos().size(); i++) {
 					for (Itens item : ((Salas) jogador.getComodoAtual()).getPisos().get(i).getItens()) {
 						item.setMachado(0);
 					}
 				}
-				System.out.println("Quantidade de itens na bag: " + jogador.getBagAxe());
+				System.out.println("Quantidade de itens na bag: " + jogador.getMochila().getBagAxe());
 			}
 		} else {
 			System.out.println("Voce esta em um corredor. Nao existe este item aqui.");
@@ -193,21 +195,21 @@ public class Move {
 
 	public void viewBag(Jogador jogador) {
 
-		System.out.println("A quantidade de ouro coletado: " + jogador.getOuro());
-		System.out.println("A quantidade de diamantes coletado: " + jogador.getDiamante());
-		System.out.println("A quantidade de potions na bag: " + jogador.getBagPot());
-		System.out.println("A quantidade de chaves na bag: " + jogador.getBagKey());
-		System.out.println("A quantidade de machados na bag: " + jogador.getBagAxe());
-		if (jogador.getBagAxe() >= 1) {
-			System.out.println("Possui " + jogador.getBagAxe() + " machado(s).");
+		System.out.println("A quantidade de ouro coletado: " + jogador.getMochila().getOuro());
+		System.out.println("A quantidade de diamantes coletado: " + jogador.getMochila().getDiamante());
+		System.out.println("A quantidade de potions na bag: " + jogador.getMochila().getBagPot());
+		System.out.println("A quantidade de chaves na bag: " + jogador.getMochila().getBagKey());
+		System.out.println("A quantidade de machados na bag: " + jogador.getMochila().getBagAxe());
+		if (jogador.getMochila().getBagAxe() >= 1) {
+			System.out.println("Possui " + jogador.getMochila().getBagAxe() + " machado(s).");
 		}
 	}
 
 	public void dropPotion(Mapa map, Jogador jogador) {
-		if (jogador.getBagPot() == 0) {
+		if (jogador.getMochila().getBagPot() == 0) {
 			System.out.println("Nao ha pocao na bag");
 		} else {
-			jogador.setBagPot(jogador.getBagPot() - 1);
+			jogador.getMochila().setBagPot(jogador.getMochila().getBagPot() - 1);
 			((Salas) jogador.getComodoAtual()).getPisos().get(0).getItens().get(0).setPot();
 			System.out.println("Quantidade de potions dropada na sala: "
 					+ ((Salas) jogador.getComodoAtual()).getPisos().get(0).getItens().get(0).getPot());
@@ -216,10 +218,10 @@ public class Move {
 	}
 
 	public void dropKey(Mapa map, Jogador jogador) {
-		if (jogador.getBagKey() == 0) {
+		if (jogador.getMochila().getBagKey() == 0) {
 			System.out.println("Nao ha chaves na bag");
 		} else {
-			jogador.setBagKey(jogador.getBagKey() - 1);
+			jogador.getMochila().setBagKey(jogador.getMochila().getBagKey() - 1);
 			((Salas) jogador.getComodoAtual()).getPisos().get(0).getItens().get(0).setChave();
 			System.out.println("Quantidade de chaves dropada na sala: "
 					+ ((Salas) jogador.getComodoAtual()).getPisos().get(0).getItens().get(0).getChave());
@@ -229,11 +231,11 @@ public class Move {
 
 	public void dropAxe(Mapa map, Jogador jogador) {
 		if (jogador.getComodoAtual().getIsSala()) {
-			if (jogador.getBagAxe() == 0) {
+			if (jogador.getMochila().getBagAxe() == 0) {
 				System.out.println("Nao ha machados na bag");
 			} else {
-				jogador.setBagAxe(jogador.getBagAxe() - 1);
-				jogador.setBagAxe(jogador.getBagAxe() - 1);
+				jogador.getMochila().setBagAxe(jogador.getMochila().getBagAxe() - 1);
+				jogador.getMochila().setBagAxe(jogador.getMochila().getBagAxe() - 1);
 				((Salas) jogador.getComodoAtual()).getPisos().get(0).getItens().get(0).setRandomMachado(1, 1);
 			}
 		} else {
@@ -242,8 +244,8 @@ public class Move {
 	}
 
 	public void throwAxe(Mapa map, Jogador jogador, String NomeTroll) {
-			jogador.setBagAxe(jogador.getBagAxe() - 1);
-			jogador.setBagAxe(jogador.getBagAxe() - 1);
+			jogador.getMochila().setBagAxe(jogador.getMochila().getBagAxe() - 1);
+			jogador.getMochila().setBagAxe(jogador.getMochila().getBagAxe() - 1);
 			System.out.println("Matou um troll: " + NomeTroll);
 	}
 
@@ -264,12 +266,12 @@ public class Move {
 						item.setMachado(0);
 					}
 				}	
-				if (jogador.getBagPot() == 0) {
-					jogador.setOuro(0);
-					jogador.setDiamante(0);
+				if (jogador.getMochila().getBagPot() == 0) {
+					jogador.getMochila().setOuro(0);
+					jogador.getMochila().setDiamond(0);
 					System.out.println("Troll te atacou e voce nao tinha pocao. Perdeu ouro e diamante!");
 				} else {
-					jogador.setBagPot(jogador.getBagPot() - 1);
+					jogador.getMochila().setBagPot(jogador.getMochila().getBagPot() - 1);
 					System.out.println("Troll te atacou e voce tinha pocao. Perdeu 1 pocao!");
 				}
 			}
@@ -277,16 +279,17 @@ public class Move {
 	}
 
 	public void unlock(Mapa map, Jogador jogador, String door) {
-		if (jogador.getBagKey() == 0) {
+		if (jogador.getMochila().getBagKey() == 0) {
 			System.out.println("Nao tem chave");
 		} else {
 			if (door.equals("A")) {
 				((Salas) jogador.getComodoAtual()).getPortas().get(0).setSalaTrancada(false);
-				jogador.setBagKey(jogador.getBagKey() - 1);
+				jogador.getMochila().setBagKey(jogador.getMochila().getBagKey() - 1);
 			} else if (door.equals("B")) {
 				((Salas) jogador.getComodoAtual()).getPortas().get(1).setSalaTrancada(false);
-				jogador.setBagKey(jogador.getBagKey() - 1);
+				jogador.getMochila().setBagKey(jogador.getMochila().getBagKey() - 1);
 			}
 		}
 	}
+	
 }
