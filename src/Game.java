@@ -14,9 +14,11 @@ public class Game extends Janela {
 		ArrayList<Comodo> comodos = Comodo.startCenario("entradas/mapa1.json");
 		Mapa map = new Mapa();
 		map.setComodos(comodos);
-
 		Jogador jogador = new Jogador();
-		jogador.setComodoAtual(Salas.getSalaByIdentificador(comodos, 1));
+		
+		jogador.setComodoAtual(Salas.getSalaByIdentificador(comodos, 1)); // Define a sala inicial do game.
+		
+		// Seta a mochila do jogador para 0.
 		jogador.getMochila().setBagAxe(0);
 		jogador.getMochila().setBagKey(0);
 		jogador.getMochila().setBagPot(0);
@@ -45,16 +47,20 @@ public class Game extends Janela {
 			comandos(jogador, comodos, troll, map);
 		
 		}
+		
 	}
 	
 	private static void exibeItensInterface(Jogador jogador, Janela janela, ArrayList<Trolls> troll) {
+		
+		int somaOuro = 0;
+		int somaDiamante = 0;
 		
 		// Exibe a id da Sala.
 		if (jogador.getComodoAtual() instanceof Salas) {
 			Salas comodo = (Salas)jogador.getComodoAtual();
 			janela.setIdSala(janela, comodo.getSalasId());
 		} else {
-			janela.setIdSala(janela, 0); // "0" mostra que está no corredor.
+			janela.setIdSala(janela, 0); // "0" mostra que esta no corredor.
 		}
 					
 		// Exibe as pocoes na interface grafica
@@ -94,8 +100,6 @@ public class Game extends Janela {
 		janela.setLabelMachadoJogador(janela, true, jogador.getMochila().getBagAxe());
 		
 		// Exibe as pecas de ouro na interface grafica
-		int somaOuro = 0;
-		int somaDiamante = 0;
 		if (jogador.getComodoAtual().getIsSala()) {
 			for (int i = 0; i < ((Salas) jogador.getComodoAtual()).getPisos().size(); i++) {
 				for (Itens item : ((Salas) jogador.getComodoAtual()).getPisos().get(i).getItens()) {
@@ -159,7 +163,7 @@ public class Game extends Janela {
 						movimento.moveTroll(map, troll, jogador);
 					}
 				} catch (ArrayIndexOutOfBoundsException e) {
-					System.out.println("Não pode ir para a porta");
+					System.out.println("Nao pode ir para a porta");
 				}
 			} else if (palavra[1].equals("gold") || palavra[1].equals("diamond") || palavra[1].equals("axe") || palavra[1].equals("pot") || palavra[1].equals("key")) {
 				ler = scanner.nextLine();
@@ -246,4 +250,5 @@ public class Game extends Janela {
 		}
 		
 	}
+	
 }
