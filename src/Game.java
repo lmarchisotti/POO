@@ -241,10 +241,6 @@ public class Game extends Janela {
 					}
 				}
 			}
-		} else if (palavra[0].equals("unlock")) {
-			if (palavra[1].equals("A") || palavra[1].equals("B") || palavra[1].equals("C")) {
-				movimento.unlock(map, jogador, palavra[1]);
-			}
 		} else {
 			System.out.print("\nComando invalido\n");
 		}

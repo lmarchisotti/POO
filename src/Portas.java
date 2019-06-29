@@ -1,7 +1,10 @@
 public class Portas {
 	
 	private boolean salaTrancada;
-
+	private int saida;
+	private int entrada;
+	public char nome;
+	
 	public boolean getSalaTrancada() {
 		return salaTrancada;
 	}
@@ -9,10 +12,6 @@ public class Portas {
 	public void setSalaTrancada(boolean salaTrancada) {
 		this.salaTrancada = salaTrancada;
 	}
-	
-	private int saida;
-	private int entrada;
-	public char nome;
 	
 	public int getSaida() {
 		return saida;
@@ -37,4 +36,5 @@ public class Portas {
 	public void setNome(char nome) {
 		this.nome = nome;
 	}
+	
 }

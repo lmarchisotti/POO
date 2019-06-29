@@ -42,11 +42,13 @@ public class Move {
 							} else if (door.equals("B")) {
 								((Salas) jogador.getComodoAtual()).getPortas().get(1).setSalaTrancada(false);
 								jogador.getMochila().setBagKey(jogador.getMochila().getBagKey() - 1);
+							} else if (door.equals("C")) {
+								((Salas) jogador.getComodoAtual()).getPortas().get(2).setSalaTrancada(false);
+								jogador.getMochila().setBagKey(jogador.getMochila().getBagKey() - 1);
 							}
 							
 							System.out.println("Porta destrancada!");
-							jogador.setComodoAtual(
-									Corredor.getCorredorByIdentificador(map.getComodos(), porta.getSaida()));
+							jogador.setComodoAtual(Corredor.getCorredorByIdentificador(map.getComodos(), porta.getSaida()));
 						} else {
 							System.out.println("Porta esta trancada e voce nao possui chave.");
 							return 0;
@@ -274,20 +276,6 @@ public class Move {
 					jogador.getMochila().setBagPot(jogador.getMochila().getBagPot() - 1);
 					System.out.println("Troll te atacou e voce tinha pocao. Perdeu 1 pocao!");
 				}
-			}
-		}
-	}
-
-	public void unlock(Mapa map, Jogador jogador, String door) {
-		if (jogador.getMochila().getBagKey() == 0) {
-			System.out.println("Nao tem chave");
-		} else {
-			if (door.equals("A")) {
-				((Salas) jogador.getComodoAtual()).getPortas().get(0).setSalaTrancada(false);
-				jogador.getMochila().setBagKey(jogador.getMochila().getBagKey() - 1);
-			} else if (door.equals("B")) {
-				((Salas) jogador.getComodoAtual()).getPortas().get(1).setSalaTrancada(false);
-				jogador.getMochila().setBagKey(jogador.getMochila().getBagKey() - 1);
 			}
 		}
 	}

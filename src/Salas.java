@@ -3,12 +3,10 @@ import java.util.ArrayList;
 
 public class Salas extends Comodo{
 	
-	// ID da sala, tamanho e vetor de pisos.
 	private int salasId;
 	private Integer tamanho;
 	private ArrayList<Pisos> pisos;
 	
-	// Getters e Setters do ID das salas, pisos e tamanho.
 	public ArrayList<Pisos> getPisos() {
 		return pisos;
 	}
