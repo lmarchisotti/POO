@@ -247,7 +247,6 @@ public class Move {
 
 	public void throwAxe(Mapa map, Jogador jogador, String NomeTroll) {
 			jogador.getMochila().setBagAxe(jogador.getMochila().getBagAxe() - 1);
-			jogador.getMochila().setBagAxe(jogador.getMochila().getBagAxe() - 1);
 			System.out.println("Matou um troll: " + NomeTroll);
 	}
 

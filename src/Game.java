@@ -23,20 +23,24 @@ public class Game extends Janela {
 		jogador.getMochila().setBagKey(0);
 		jogador.getMochila().setBagPot(0);
 		
-		// Adiciona trolls na lista de trolls e nas salas.
+		// Adiciona trolls na lista de trolls e nas salas. (Posição das salas é iniciada em "0")
 		ArrayList<Trolls> troll = new ArrayList<Trolls>();
-		Trolls troll1 = new Trolls("TrolldaCaverna", map.getComodos().get(2), true);
+		Trolls troll1 = new Trolls("TrolldaCaverna", map.getComodos().get(1), true);
 		troll.add(troll1);
-		Trolls troll2 = new Trolls("TrolldaCaverna", map.getComodos().get(4), true);
+		Trolls troll2 = new Trolls("TrolldaCaverna", map.getComodos().get(2), true);
 		troll.add(troll2);
-		Trolls troll3 = new Trolls("TrolldaCaverna", map.getComodos().get(8), true);
+		Trolls troll3 = new Trolls("TrolldaCaverna", map.getComodos().get(4), true);
 		troll.add(troll3);
-		Trolls troll4 = new Trolls("TrollGuerreiro", map.getComodos().get(12), true);
+		Trolls troll4 = new Trolls("TrollGuerreiro", map.getComodos().get(11), true);
 		troll.add(troll4);
-		Trolls troll5 = new Trolls("TrollGuerreiro", map.getComodos().get(15), true);
+		Trolls troll5 = new Trolls("TrollGuerreiro", map.getComodos().get(13), true);
 		troll.add(troll5);
-		Trolls troll6 = new Trolls("TrollGuerreiro", map.getComodos().get(19), true);
+		Trolls troll6 = new Trolls("TrollGuerreiro", map.getComodos().get(18), true);
 		troll.add(troll6);
+		
+		for(int i = 0; i < troll.size(); i++){
+			System.out.println(troll.get(i).getComodoAtual());
+		}
 		
 		while (true) {
 			
